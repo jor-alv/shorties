@@ -35,6 +35,7 @@ Rails.application.routes.draw do
 
   # Create and update and delete booking
   post 'shorties/:id/bookings', to: 'bookings#create'
+  get 'bookings/:id', to: 'bookings#show', as: 'booking'
   patch 'bookings/:id', to: 'bookings#update'
   delete 'bookings/:id', to: 'bookings#destroy'
 

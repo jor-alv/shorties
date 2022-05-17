@@ -1,4 +1,86 @@
-<h1><%="#{@user.first_name} #{@user.last_name}'s Profile"%></h1>
+<div class='container'>
+  <h1><%="#{@user.first_name} #{@user.last_name}'s Profile"%></h1>
+
+  <%# Display a user's shorty listings IF they exist %>
+
+  <% unless @user.shorties.length == 0 %>
+    <h2>Your listed shorties:</h2>
+    <div class='row'>
+      <% @user.shorties.each do |shorty| %>
+        <div class='col-sm'>
+          <div class="card-product">
+            <% if shorty.photo_url %>
+              <img src= <%= shorty.photo_url %> />
+            <% else %>
+              <img src= "https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754" />
+            <% end %>
+            <div class="card-product-infos d-flex justify-contents-between">
+              <div class="d-flex flex-column align-items-between">
+                <h2><%= shorty.name %></h2>
+                <p><%= shorty.height  %></p>
+                <h3><%= shorty.price %></p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos reiciendis atque</p>
+              </div>
+              <div class="d-flex flex-column align-items-between">
+                <%= link_to "Edit", edit_shorties_path(shorty), class: "btn btn-primary" %>
+                <%= link_to "Delete", booking_path(shorty), method: :delete, class: "btn btn-primary" %>
+                  <% shorty.bookings.each do |booking| %>
+                    <%  if booking.pending? %>
+                      <%= link_to "Pending Reservation", booking_path(shorty), class: "btn btn-alert" %>
+                      <% end %>
+                  <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+
+  <%# Display a user's shorties booked IF they exist %>
+
+ <% unless @user.bookings.length == 0 %>
+    <h2>Your bookings:</h2>
+    <div class='row'>
+      <% @user.bookings.shorties.each do |shorty| %>
+        <div class='col-sm'>
+          <div class="card-product">
+            <% if shorty.photo_url %>
+              <img src= <%= shorty.photo_url %> />
+            <% else %>
+              <img src= "https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754" />
+            <% end %>
+            <div class="card-product-infos d-flex justify-contents-between">
+              <div class="d-flex flex-column align-items-between">
+                <h2><%= shorty.name %></h2>
+                <p><%= shorty.height  %></p>
+                <h3><%= shorty.price %></p>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos reiciendis atque</p>
+              </div>
+              <div class="d-flex flex-column align-items-between">
+                <%= link_to "Edit", edit_shorties_path(shorty), class: "btn btn-primary" %>
+                <%= link_to "Delete", booking_path(shorty), method: :delete, class: "btn btn-primary" %>
+                  <% shorty.bookings.each do |booking| %>
+                    <% if booking.pending? %>
+                      <p class="btn btn-alert" %>Pending</p>
+                    <% elsif booking.confirmed? %>
+                      <p class="btn btn-success" %>Confirmed</p>
+                    <% elsif booking.archived? %>
+                      <p class="btn btn-secondary" %>Completed</p>
+                    <% end %>
+                  <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+
+
+</div>
 
 
 
