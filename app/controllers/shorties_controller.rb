@@ -1,4 +1,4 @@
-class ShortysController < ApplicationController
+class ShortiesController < ApplicationController
   def index
   end
 
