@@ -27,7 +27,7 @@
                   <% shorty.bookings.each do |booking| %>
                     <%  if booking.pending? %>
                       <%= link_to "Pending Reservation", booking_path(shorty), class: "btn btn-alert m-2" %>
-                      <% end %>
+                    <% end %>
                   <% end %>
               </div>
             </div>
