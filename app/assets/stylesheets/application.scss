@@ -11,6 +11,7 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "shorties/index";
 
 
 .navbar-lewagon {
@@ -65,4 +66,9 @@
 .btn-flat:hover {
   background: #f6ed01;
   color: grey;
+}
+
+
+h2 {
+  text-decoration: none;
 }
