@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :find_shortys, only: [ :new, :create ]
+  before_action :set_shortys, only: [ :new, :create ]
 
   def new
     @booking = Booking.new
@@ -9,7 +9,7 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.shorty = @shorty
     if @booking.save
-      redirect_to shorties_path(@shorty)
+      redirect_to shorty_path(@shorty)
     else
       render :new
     end
@@ -29,11 +29,11 @@ class BookingsController < ApplicationController
 
   private
 
-  def find_shortys
+  def set_shortys
     @shorty = Shorty.find(params[:id])
   end
 
   def booking_params
-    params.require(:booking).permit(:status)
+    params.require(:booking).permit(:status, :start_date, :end_date, :user_id, :shorty_id)
   end
 end
