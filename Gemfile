@@ -35,6 +35,9 @@ gem 'simple_form', github: 'heartcombo/simple_form'
 # Devise
 gem 'devise'
 
+# Pundit
+gem 'pundit'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
