@@ -17,7 +17,8 @@ User.all.each do |user|
       Shorty.create!(height: rand(150..175),
                      name: "#{clones[rand(0..3)]} #{user.first_name}",
                      price: rand(100..500),
-                     user: user)
+                     user: user,
+                     photo_url: "https://i.pravatar.cc/1000")
     end
   end
 end
