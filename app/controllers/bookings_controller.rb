@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_shortys, only: %i[new show create]
+  before_action :set_shorty, only: %i[new show create]
 
   def new
     @booking = Booking.new
@@ -32,7 +32,7 @@ class BookingsController < ApplicationController
 
   private
 
-  def set_shortys
+  def set_shorty
     @shorty = Shorty.find(params[:id])
   end
 
