@@ -18,7 +18,7 @@ class ShortiesController < ApplicationController
     @shorty.user = current_user
     authorize @shorty
     if @shorty.save
-      redirect_to @shorty, notice: 'Listing was successfully created.'
+      redirect_to shorty_path(@shorty), notice: 'Listing was successfully created.'
     else
       render :new
     end
