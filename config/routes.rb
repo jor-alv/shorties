@@ -1,24 +1,23 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'shortys#index'
+  root to: 'shorties#index'
 
   # List of all shorties
-  get 'index', to: 'shortys#index', as: 'shortys'
-
+  get 'index', to: 'shorties#index', as: 'shorties'
 
   # Page and action for creating new shorty listing
-  get 'shorties/new', to: 'shortys#new', as: 'new_shortys'
-  post 'shorties', to: 'shortys#create'
+  get 'shorties/new', to: 'shorties#new', as: 'new_shorties'
+  post 'shorties', to: 'shorties#create'
 
   # Show page for a specific shorty listing
-  get 'shorties/:id', to: 'shortys#show', as: 'shorty'
+  get 'shorties/:id', to: 'shorties#show', as: 'shorty'
 
   # Edit and update Shorty listing
-  get 'shorties/:id/edit', to: 'shortys#edit', as: 'edit_shortys'
-  patch 'shorties/:id', to: 'shortys#update'
+  get 'shorties/:id/edit', to: 'shorties#edit', as: 'edit_shorties'
+  patch 'shorties/:id', to: 'shorties#update'
 
   # Delete shorty
-  delete 'shorties/:id', to: 'shortys#destroy'
+  delete 'shorties/:id', to: 'shorties#destroy'
 
   # Create new user
   get 'profile/new', to: 'users#new', as: 'new_user'
@@ -35,7 +34,7 @@ Rails.application.routes.draw do
   delete 'profile/:id', to: 'users#destroy'
 
   # Create and update and delete booking
-  post 'shortys/:id/bookings', to: 'bookings#create'
+  post 'shorties/:id/bookings', to: 'bookings#create'
   patch 'bookings/:id', to: 'bookings#update'
   delete 'bookings/:id', to: 'bookings#destroy'
 
@@ -44,10 +43,10 @@ Rails.application.routes.draw do
     #Leaving it here in case we change our minds
 
         # resources :users do
-        #   resources :shortys, only: [:show, :edit, :destroy]
+        #   resources :shorties, only: [:show, :edit, :destroy]
         #   resources :bookings, only: [:update]
         # end
 
-        # resources :shortys
+        # resources :shorties
 
 end

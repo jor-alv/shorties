@@ -38,6 +38,9 @@ gem 'devise'
 # Pundit
 gem 'pundit'
 
+# Faker
+gem 'faker'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
