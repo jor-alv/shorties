@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   # Page and action for creating new shorty listing
   # get 'shorties/new', to: 'shorties#new', as: 'new_shorty'
   # post 'shorties', to: 'shorties#create'
-  resources :shorties, only: [:index, :new, :create]
+
+  resources :shorties, only: %i[index new create]
+
   # Show page for a specific shorty listing
   get 'shorties/:id', to: 'shorties#show', as: 'shorty'
 
@@ -39,15 +41,13 @@ Rails.application.routes.draw do
   patch 'bookings/:id', to: 'bookings#update'
   delete 'bookings/:id', to: 'bookings#destroy'
 
-
   # Started creating routes using resources, decided to use manual method for sake of clarity with prefixes
-    #Leaving it here in case we change our minds
+  # Leaving it here in case we change our minds
 
-        # resources :users do
-        #   resources :shorties, only: [:show, :edit, :destroy]
-        #   resources :bookings, only: [:update]
-        # end
+  # resources :users do
+  #   resources :shorties, only: [:show, :edit, :destroy]
+  #   resources :bookings, only: [:update]
+  # end
 
-        # resources :shorties
-
+  # resources :shorties
 end
