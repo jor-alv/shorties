@@ -1,8 +1,9 @@
 class BookingsController < ApplicationController
-  before_action :set_shortys, only: [ :new, :create ]
+  before_action :set_shortys, only: %i[new show create]
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
@@ -14,6 +15,8 @@ class BookingsController < ApplicationController
       render :new
     end
   end
+
+  def show; end
 
   def update
     @booking = Booking.find(params[:id])
