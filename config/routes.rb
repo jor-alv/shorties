@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   root to: 'shorties#index'
 
   # List of all shorties
-  get 'index', to: 'shorties#index', as: 'shorties'
+  # get 'index', to: 'shorties#index', as: 'shorties'
 
   # Page and action for creating new shorty listing
-  get 'shorties/new', to: 'shorties#new', as: 'new_shorties'
-  post 'shorties', to: 'shorties#create'
-
+  # get 'shorties/new', to: 'shorties#new', as: 'new_shorty'
+  # post 'shorties', to: 'shorties#create'
+  resources :shorties, only: [:index, :new, :create]
   # Show page for a specific shorty listing
   get 'shorties/:id', to: 'shorties#show', as: 'shorty'
 
