@@ -6,3 +6,28 @@
     <a class="btn btn-flat" href="#"> <strong> Rent now </strong></a>
   </div>
 </div>
+
+<div class= 'container'>
+  <h2 class='mt-4'>Find a shorty</h2>
+  <div class='row'>
+    <% @shorties.each do |shorty| %>
+      <div class='col col-sm-6'>
+        <div class="card-product mt-4">
+          <% if shorty.photo_url %>
+            <img src= <%= shorty.photo_url %> />
+          <% else %>
+            <img src= "https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754" />
+          <% end %>
+          <div class="card-product-infos d-flex justify-contents-between">
+            <div class="d-flex flex-column align-items-between m-2">
+              <h2><%= link_to shorty.name, shorty_path(shorty) %></h2>
+              <p><%= shorty.height  %>cm</p>
+              <h3>$<%= shorty.price %></p></h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos reiciendis atque</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
