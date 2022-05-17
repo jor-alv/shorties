@@ -1,17 +1,17 @@
 class ShortiesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index]
-  before_action :set_shorty, only: [:show, :edit, :update, :destroy]
+  before_action :set_shorty, only: %i[show edit update destroy]
 
   def new
     @shorty = Shorty.new
     authorize @shorty
   end
 
-  def show; end
-
   def index
     @shorties = policy_scope(Shorty)
   end
+
+  def show; end
 
   def create
     @shorty = Shorty.new(shorty_params)
