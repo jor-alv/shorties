@@ -1,15 +1,107 @@
-<div class="container-fluid">
-  <h1><%= @shorty.name %></h1>
-  <div class="card-product m-5">
-    <img src="https://robohash.org/faker" />
-      <div class="card-product-infos">
-        <h2><%= @shorty.name %></h2>
-        <p><%= @shorty.height %></p>
-        <p><%= @shorty.price %></p>
-        <p><%= @shorty.description %></p>
-    <%= link_to shorty_path(@shorty), method: :delete, data: {confirm: 'Are you sure you want to delete this shorty?'} do %>
-    <i class="fa-solid fa-trash-can"></i>
-    <% end %>
+<div class="container">
+  <div class="mt-4 mb-3">
+    <h1 class="small-title mt-4"><%= @shorty.name %></h1>
+    <p class="mb-2"><%=@shorty.height %> cm</p>
+  </div>
+
+  <%# Photo gallery %>
+  <div class="gallery-container">
+    <div class="row">
+      <div class="col-lg-8 mt-2 mb-2">
+        <img
+          src="https://www.insidehook.com/wp-content/uploads/2021/07/Danny-DeVito-e1627433269130.jpg?fit=1200%2C800"
+          alt="Table Full of Spices"
+          class=" shadow-1-strong rounded-3 gallery-container image"
+        />
+      </div>
+      <div class="col-lg-4 col-md-12 mb-4 mt-2 mb-lg-0 d-flex flex-column gallery-container">
+        <img
+          src="https://i.guim.co.uk/img/static/sys-images/Guardian/About/General/2013/1/3/1357234122373/QA-Danny-DeVito-008.jpg?width=620&quality=85&auto=format&fit=max&s=fb569632643fd6e0beecaf717339c9a0"
+          class="w-100 h-25 d-inline-block shadow-1-strong rounded-3 mb-4 image"
+          alt="Boat on Calm Water"
+        />
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdEjVoePWpnfBpnmZ2JmMwH0F-7qKxADhiBksaS5G8mAm78ByYJdOgdywJPHMDk_ARhjw&usqp=CAU"
+          class="w-100 h-75 shadow-1-strong rounded-3 image overflow-hidden"
+          alt="Wintry Mountain Landscape"
+        />
+      </div>
+    </div>
+  </div>
+
+  <%# Listing info %>
+  <div class="row mt-4">
+    <div class="col-lg-8">
+      <div class="card-trip line-break">
+        <div class="card-trip-infos">
+          <div class="d-flex justify-content-row align-items-center">
+            <img src= <%= @shorty.user.photo_url %> class="card-trip-user avatar-bordered" />
+            <h2>Offered by <%= link_to @shorty.user.first_name, user_path(@shorty.user)%></h2>
+          </div>
+          <h2 class="card-trip-pricing d-flex align-self-center ">$<%=@shorty.price %> per night</h2>
+        </div>
+      </div>
+      <div class="card-trip mt-4">
+       <h2> About <%= @shorty.name %>:</h2>
+          <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
+      </div>
+    </div>
+
+    <%# Book now card %>
+    <div class="col-lg-4 d-flex sticky-top">
+      <div class="card shadow mb-2 bg-body rounded overflow-hidden w-100">
+        <div class="card-body" id="billing">
+          <div class="d-flex align-items-center flex-fill my-1 mt-4" id="discount">
+              <div class="bg-dark text-white w-50 border-0 ">Start date</div>
+              <div class="amount text-center w-50 border">05/12/22</div>
+          </div>
+          <div class="d-flex align-items-center flex-fill my-1" id="total">
+              <div class="bg-dark text-white w-50 border-0 pl-0">End date</div>
+              <div class="amount text-center w-50 border">05/15/22</div>
+          </div>
+          <div class="d-flex justify-content-between text-center mt-4" id="btns">
+              <div class="btn btn-primary me-2">Book now</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%# Additional info %>
+    <div class="col-lg-8">
+      <div class="card-trip line-break">
+        <h2> What this shorty offers:</h2>
+        <div class="row">
+          <div class="col-lg-6">
+            <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
+          </div>
+          <div class="col-lg-6">
+            <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <%# Put further left-side columns here %>
+
+
   </div>
 </div>
-</div>
+
+
+<%#
+  <div class="row">
+    <div class="d-flex justify-content-between photos-container">
+      <div class="col col-sm-6">
+        <img src="https://www.insidehook.com/wp-content/uploads/2021/07/Danny-DeVito-e1627433269130.jpg?fit=1200%2C800" alt="Large photo of shorty">
+      </div>
+      <div class="col col-sm-3 image-tile-sm">
+        <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2018%2F01%2Fmms-super-bowl-ad-danny-devito-ft-blog0118.jpg&q=60" alt="Small photo of shorty">
+        <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2018%2F01%2Fmms-super-bowl-ad-danny-devito-ft-blog0118.jpg&q=60" alt="Small phto of shorty">
+      </div>
+      <div class="col col-sm-3 image-tile-sm">
+        <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2018%2F01%2Fmms-super-bowl-ad-danny-devito-ft-blog0118.jpg&q=60" alt="Small phto of shorty">
+        <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F9%2F2018%2F01%2Fmms-super-bowl-ad-danny-devito-ft-blog0118.jpg&q=60" alt="Small photo of shorty">
+      </div>
+    </div>
+  </div>
+ %>

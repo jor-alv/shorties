@@ -14,11 +14,22 @@
 @import "shorties/index";
 
 
+body {
+  background-color: white;
+}
+
+.stuck {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 1;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  position: sticky;
-  top: 0;
+  // position: sticky;
+  // top: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -98,9 +109,139 @@
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  padding: 12px;
 }
 
 h2 {
   text-decoration: none;
+}
+
+.image {
+  object-fit: cover;
+  // border-radius: 24px;
+  height: 100%;
+  width: 100%;
+}
+
+.gallery-container {
+  max-height: 420px;
+}
+
+.small-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.smaller-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip {
+  // overflow: hidden;
+  // background: white;
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card-trip > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card-trip h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-trip p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-trip .card-trip-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-trip-infos .card-trip-user {
+  // position: absolute;
+  // right: 16px;
+  // // top: -20px;
+  // width: 40px;
+}
+
+.line-break {
+  border-bottom: 1px solid rgba(80,80,80,0.2);
+  padding: 12px 0px 12px 0px;
+}
+
+
+#billing #discount,
+#billing #total {
+    height: 45px;
+    font-size: 16px;
+    margin: 0;
+}
+
+#billing #discount div,
+#billing #total div {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+#billing #btns .btn {
+    width: 100%;
+    border-radius: 0;
+    padding: 8px 10px;
+    color: #3268ff;
+    border: 1px solid #3268ff;
+}
+
+#billing #btns .btn.btn-default:hover {
+    background-color: #3268ff;
+    color: #fff;
+}
+
+#billing #btns .btn.btn-primary {
+    background-color: #6890ff !important;
+    color: #fff;
+}
+
+
+/* Backgrounds */
+.bg-dark {
+    background-color: rgba(180,180,180,1) !important;
+}
+
+.card-container {
+padding: 0px 8px;
+}
+
+
+.profile-header {
+  text-align: center;
+  padding: 24px;
+}
+
+.profile-photo {
+  border-radius: 100%;
+  max-width: 200px;
+  height: 50%;
+  margin-top: 24px;
+}
+
+.card-product > img {
+  height: 180px;
+  width: 100%;
+  object-fit: cover;
 }
