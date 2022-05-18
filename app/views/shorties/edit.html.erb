@@ -1,2 +1,15 @@
-<h1>shorties#edit</h1>
-<p>Find me in app/views/shorties/edit.html.erb</p>
+<div class="container form my-5">
+  <h1>Edit Shortie</h1>
+  <%= simple_form_for(@shorty) do |f| %>
+    <%= f.input :name %>
+    <%= f.input :height %>
+    <%= f.input :price %>
+    <%= f.input :description %>
+    <%# <div class='d-flex justify-content-between pt-4'> %>
+      <%# <p class='m-0'> %>
+      <%= f.submit "Edit Shortie", class: "btn btn-primary" %>
+      <%# </p> %>
+    <%# </div> %>
+  <% end %>
+  <br>
+</div>

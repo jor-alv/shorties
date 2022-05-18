@@ -6,11 +6,36 @@ Booking.destroy_all
 
 clones = ["Black-tie", "Business", "Casual", "Party"]
 
+User.create!(email: 'yannbouhadana@lewagon.com',
+             first_name: 'Yann',
+             last_name: 'Bouhadana',
+             password: '123456',
+             photo_url: 'https://avatars.githubusercontent.com/u/100429284?v=4')
+
+User.create!(email: 'kimcoquilla@lewagon.com',
+             first_name: 'Kim',
+             last_name: 'Coquilla',
+             password: '123456',
+             photo_url: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1649080145/tgmtvniwcj02nbwgf41c.jpg')
+
+User.create!(email: 'jamescampbell@lewagon.com',
+             first_name: 'James',
+             last_name: 'Campbell',
+             password: '123456',
+             photo_url: 'https://avatars.githubusercontent.com/u/101915976?v=4')
+
+User.create!(email: 'jorgealvarez@lewagon.com',
+             first_name: 'Jorge',
+             last_name: 'Alvarez',
+             password: '123456',
+             photo_url: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1649158028/a6jnbozctxvloomxuspj.jpg')
+
 5.times do
   User.create!(email: Faker::Internet.email,
                first_name: Faker::Name.first_name,
                last_name: Faker::Name.last_name,
-               password: "123456")
+               password: "123456",
+               photo_url: "https://i.pravatar.cc/1000")
 end
 
 User.all.each do |user|
