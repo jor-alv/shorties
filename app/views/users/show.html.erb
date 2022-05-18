@@ -38,7 +38,7 @@
               </div>
               <div class="d-flex flex-column align-items-between justify-content-center">
                 <%= link_to "Edit", edit_shorties_path(shorty), class: "btn btn-primary m-2" %>
-                <%= link_to "Delete", booking_path(shorty), method: :delete, class: "btn btn-primary m-2" %>
+                <%= link_to "Delete", shorty_path(shorty), method: :delete, class: "btn btn-primary m-2" %>
               </div>
                  <% shorty.bookings.each do |booking| %>
                   <% if booking.pending? %>
@@ -64,7 +64,7 @@
   <%# Display a user's shorties booked IF they exist %>
 
  <% unless @user.bookings.length == 0 %>
-    <h2>My client bookings:</h2>
+    <h2>My bookings:</h2>
     <div class='row'>
       <% @my_client_bookings.each do |booking| %>
         <div class='col col-sm-6'>
@@ -85,6 +85,9 @@
                 <%  if booking.pending? %>
                   <%= link_to "Pending Reservation", booking_path(booking.shorty), class: "btn btn-warning m-2" %>
                 <% end %>
+                <%  if booking.confirmed? %>
+                  <%= link_to "Confirmed", booking_path(booking.shorty), class: "btn btn-success m-2" %>
+                <% end %>
               </div>
             </div>
           </div>
@@ -93,9 +96,3 @@
     </div>
   <% end %>
 </div>
-
-
-
-
-
-<p>Find me in app/views/users/show.html.erb</p>
