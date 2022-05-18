@@ -14,11 +14,20 @@
 @import "shorties/index";
 
 
+body {
+  background-color: white;
+}
+
+.stuck {
+  position: sticky;
+  top: 0;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
-  position: sticky;
-  top: 0;
+  // position: sticky;
+  // top: 0;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -118,7 +127,9 @@ h2 {
 }
 
 .small-title {
-  font-size: 24px
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
 }
 
 
@@ -171,8 +182,8 @@ h2 {
 #billing #discount,
 #billing #total {
     height: 45px;
-    font-size: 1.2rem;
-    color: #bbb;
+    font-size: 16px;
+    margin: 0;
 }
 
 #billing #discount div,
@@ -204,7 +215,7 @@ h2 {
 
 /* Backgrounds */
 .bg-dark {
-    background-color: #616161 !important;
+    background-color: rgba(180,180,180,1) !important;
 }
 
 .card-container {
