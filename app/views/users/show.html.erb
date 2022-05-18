@@ -1,25 +1,27 @@
 <div class='container'>
-  <h1><%="#{@user.first_name} #{@user.last_name}'s Profile"%></h1>
+  <div class="profile-header">
+    <h1 class="small-title mt-4"><%="#{@user.first_name} #{@user.last_name}'s Profile"%></h1>
+    <img src=<%=@user.photo_url%> alt="Profile photo" class="profile-photo">
+</div>
 
   <%# Display a user's shorty listings IF they exist %>
-
   <% unless @user.shorties.length == 0 %>
-    <h2>Your listed shorties:</h2>
-    <div class='row'>
+    <h2 class="smaller-title mt-4"><%= @user.first_name%>'s listed shorties:</h2>
+    <div class='row line-break'>
       <% @user.shorties.each do |shorty| %>
         <div class='col col-sm-6'>
-          <div class="card-product mt-4">
-            <% if shorty.photo_url %>
-              <img src= <%= shorty.photo_url %> />
-            <% else %>
-              <img src= "https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754" />
-            <% end %>
+          <div class="card-product mt-4 d-flex flex-column">
+              <% if shorty.photo_url %>
+                <img src= <%= shorty.photo_url %> />
+              <% else %>
+                <img src= "https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754" class="w-100"/>
+              <% end %>
             <div class="card-product-infos d-flex justify-contents-between">
               <div class="d-flex flex-column align-items-between m-2">
                 <h2><%= link_to shorty.name, shorty_path(shorty) %></h2>
-                <p><%= shorty.height  %>cm</p>
-                <h3>$<%= shorty.price %></p></h3>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos reiciendis atque</p>
+                <p class="mt-0"><%= shorty.height  %>cm</p>
+                <h2 class="m-0 pt-2 pb-2 card-trip-pricing">$<%= shorty.price %>/night</h3>
+                <p class="mt-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos reiciendis atque</p>
               </div>
               <div class="d-flex flex-column align-items-between justify-content-center">
                 <%= link_to "Edit", edit_shorties_path(shorty), class: "btn btn-primary m-2" %>
