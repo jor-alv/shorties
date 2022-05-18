@@ -4,6 +4,19 @@
     <img src=<%=@user.photo_url%> alt="Profile photo" class="profile-photo">
 </div>
 
+<%# Listing info %>
+  <div class="row mt-4">
+    <div class="col-lg-12">
+      <div class="card-trip line-break">
+      </div>
+      <div class="card-trip mt-4">
+       <h2> About <%= @user.first_name %>:</h2>
+       <%=  link_to "Add a Listing", new_shorty_path, class: "btn btn-primary m-2"%>
+          <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
+      </div>
+    </div>
+
+
   <%# Display a user's shorty listings IF they exist %>
   <% unless @user.shorties.length == 0 %>
     <h2 class="smaller-title mt-4"><%= @user.first_name%>'s listed shorties:</h2>
