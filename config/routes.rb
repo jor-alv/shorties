@@ -36,10 +36,9 @@ Rails.application.routes.draw do
   delete 'profile/:id', to: 'users#destroy'
 
   # Create and update and delete booking
-  post 'shorties/:id/bookings', to: 'bookings#create'
-  get 'bookings/:id', to: 'bookings#show', as: 'booking'
-  patch 'bookings/:id', to: 'bookings#update'
-  delete 'bookings/:id', to: 'bookings#destroy'
+  post 'shorties/:shorty_id/bookings', to: 'bookings#create', as: 'shorty_bookings'
+  # delete 'bookings/:id', to: 'bookings#destroy'
+  # patch 'bookings/:id', to: 'bookings#update', as: 'booking'
 
   # Started creating routes using resources, decided to use manual method for sake of clarity with prefixes
   # Leaving it here in case we change our minds
@@ -49,5 +48,5 @@ Rails.application.routes.draw do
   #   resources :bookings, only: [:update]
   # end
 
-  # resources :shorties
+  resources :bookings, only: [:update]
 end

@@ -55,11 +55,11 @@ end
 #   unless shorty == Shorty.first
 #     2.times do
 #       start_date = Faker::Date.between(from: 1.days.from_now, to: 15.days.from_now)
-#       # Booking.create!(shorty: shorty,
-#       #                 user: other_users.sample,
-#       #                 start_date: start_date,
-#       #                 end_date: start_date + rand(0..2),
-#       #                 status: [0, 1].sample)
+#       Booking.create!(shorty: shorty,
+#                       user: other_users.sample,
+#                       start_date: start_date,
+#                       end_date: start_date + rand(0..2),
+#                       status: [0, 1].sample)
 #     end
 #   end
 # end
