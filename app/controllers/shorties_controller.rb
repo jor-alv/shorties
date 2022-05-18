@@ -11,7 +11,9 @@ class ShortiesController < ApplicationController
     @shorties = policy_scope(Shorty)
   end
 
-  def show; end
+  def show
+    @booking = Booking.new
+  end
 
   def create
     @shorty = Shorty.new(shorty_params)

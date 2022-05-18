@@ -26,12 +26,20 @@
               <div class="d-flex flex-column align-items-between justify-content-center">
                 <%= link_to "Edit", edit_shorties_path(shorty), class: "btn btn-primary m-2" %>
                 <%= link_to "Delete", booking_path(shorty), method: :delete, class: "btn btn-primary m-2" %>
-                  <% shorty.bookings.each do |booking| %>
-                    <%  if booking.pending? %>
-                      <%= link_to "Pending Reservation", booking_path(shorty), class: "btn btn-alert m-2" %>
-                    <% end %>
-                  <% end %>
               </div>
+                 <% shorty.bookings.each do |booking| %>
+                  <% if booking.pending? %>
+                    <%# <p class="btn btn-alert m-2" >Pending</p> %>
+                    <%= simple_form_for booking do |f| %>
+                      <%= f.input :status, priority: ["Pending"], collection: ["Confirmed", "Archived"], class: "btn btn-alert"%>
+                      <%= f.submit%>
+                    <% end %>
+                  <% elsif booking.confirmed? %>
+                    <p class="btn btn-success m-2" %>Confirmed</p>
+                  <% elsif booking.archived? %>
+                    <p class="btn btn-secondary m-2" %>Completed</p>
+                <% end %>
+        <% end %>
             </div>
           </div>
         </div>
@@ -43,35 +51,27 @@
   <%# Display a user's shorties booked IF they exist %>
 
  <% unless @user.bookings.length == 0 %>
-    <h2>Your bookings:</h2>
+    <h2>My client bookings:</h2>
     <div class='row'>
-      <% @user.bookings.shorties.each do |shorty| %>
+      <% @my_client_bookings.each do |booking| %>
         <div class='col col-sm-6'>
-          <div class="card-product mt-4">
-            <% if shorty.photo_url %>
-              <img src= <%= shorty.photo_url %> />
+          <div class="card-product mt-4 d-flex flex-column">
+            <% if booking.shorty.photo_url %>
+              <img src= <%= booking.shorty.photo_url %> />
             <% else %>
               <img src= "https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754" />
             <% end %>
             <div class="card-product-infos d-flex justify-contents-between">
               <div class="d-flex flex-column align-items-between m-2">
-                <h2><%= shorty.name %></h2>
-                <p class="p-1"><%= shorty.height  %>cm</p>
-                <h3>$<%= shorty.price %></p>
+                <h2><%= booking.shorty.name %></h2>
+                <p class="p-1"><%= booking.shorty.height  %>cm</p>
+                <h3>$<%= booking.shorty.price %></p>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos reiciendis atque</p>
               </div>
               <div class="d-flex flex-column align-items-between justify-content-center">
-                <%= link_to "Edit", edit_shorties_path(shorty), class: "btn btn-primary m-2" %>
-                <%= link_to "Delete", booking_path(shorty), method: :delete, class: "btn btn-primary m-2" %>
-                  <% shorty.bookings.each do |booking| %>
-                    <% if booking.pending? %>
-                      <p class="btn btn-alert m-2" %>Pending</p>
-                    <% elsif booking.confirmed? %>
-                      <p class="btn btn-success m-2" %>Confirmed</p>
-                    <% elsif booking.archived? %>
-                      <p class="btn btn-secondary m-2" %>Completed</p>
-                    <% end %>
-                  <% end %>
+                <%  if booking.pending? %>
+                  <%= link_to "Pending Reservation", booking_path(booking.shorty), class: "btn btn-warning m-2" %>
+                <% end %>
               </div>
             </div>
           </div>

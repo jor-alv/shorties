@@ -1,24 +1,30 @@
 class BookingsController < ApplicationController
-  before_action :set_shorty, only: %i[new show create]
+  before_action :set_shorty, only: %i[new create]
 
   def new
     @booking = Booking.new
-    authorize @booking
   end
 
   def create
-    @booking = Booking.new(booking_params)
+    # @booking = Booking.new(booking_params)
+    @booking = Booking.new()
+    user = current_user
+    @booking.user = current_user
+    @booking.status = 0
     @booking.shorty = @shorty
+    authorize @booking
+
     if @booking.save
-      redirect_to shorty_path(@shorty)
+      redirect_to user_path(user)
     else
-      render :new
+      render :shorty
     end
   end
 
   def show; end
 
   def update
+    raise
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     redirect_to root_path
@@ -33,10 +39,10 @@ class BookingsController < ApplicationController
   private
 
   def set_shorty
-    @shorty = Shorty.find(params[:id])
+    @shorty = Shorty.find(params[:shorty_id])
   end
 
   def booking_params
-    params.require(:booking).permit(:status, :start_date, :end_date, :user_id, :shorty_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end

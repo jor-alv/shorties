@@ -60,7 +60,13 @@
               <div class="amount text-center w-50 border">05/15/22</div>
           </div>
           <div class="d-flex justify-content-between text-center mt-4" id="btns">
-              <div class="btn btn-primary me-2">Book now</div>
+              <div class="me-2 w-100">
+                <%= simple_form_for [@shorty, @booking] do |f| %>
+                  <%# <%= f.input :username %>
+                  <%= f.button :submit, label: "Book now", class: "btn btn-primary" %>
+                <% end %>
+                <%# <%= link_to "Book now", create_booking_path(@shorty), class:"btn btn-primary" %>
+              </div>
           </div>
         </div>
       </div>
