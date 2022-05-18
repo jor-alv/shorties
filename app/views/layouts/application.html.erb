@@ -8,17 +8,16 @@
     <script src="https://kit.fontawesome.com/ea809bf82d.js" crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
 
   <body>
-  <div class="stuck">
-    <div class="container">
-      <%= render "shared/navbar" %>
+    <div class="stuck">
+      <div class="container">
+        <%= render "shared/navbar" %>
+      </div>
+      <div class="line-break p-0"></div>
     </div>
-    <div class="line-break p-0"></div>
-  </div>
     <%= yield %>
   </body>
 </html>
