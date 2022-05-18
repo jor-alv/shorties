@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def edit; end
 
   def update
-    if @user.update(restaurant_params)
+    if @user.update(user_params)
       redirect_to @user, notice: 'User information was successfully updated.'
     else
       render :edit
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @restaurant.destroy
+    @user.destroy
     redirect_to root, notice: 'User was successfully deleted.'
   end
 

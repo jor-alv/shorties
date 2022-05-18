@@ -38,7 +38,7 @@
               </div>
               <div class="d-flex flex-column align-items-between justify-content-center">
                 <%= link_to "Edit", edit_shorties_path(shorty), class: "btn btn-primary m-2" %>
-                <%= link_to "Delete", booking_path(shorty), method: :delete, class: "btn btn-primary m-2" %>
+                <%= link_to "Delete", shorty_path(shorty), method: :delete, class: "btn btn-primary m-2" %>
                   <% shorty.bookings.each do |booking| %>
                     <%  if booking.pending? %>
                       <%= link_to "Pending Reservation", booking_path(shorty), class: "btn btn-alert m-2" %>
