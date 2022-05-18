@@ -16,7 +16,7 @@
             <% end %>
             <div class="card-product-infos d-flex justify-contents-between">
               <div class="d-flex flex-column align-items-between m-2">
-                <h2><%= shorty.name %></h2>
+                <h2><%= link_to shorty.name, shorty_path(shorty) %></h2>
                 <p><%= shorty.height  %>cm</p>
                 <h3>$<%= shorty.price %></p></h3>
                 <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos reiciendis atque</p>
