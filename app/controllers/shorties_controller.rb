@@ -34,7 +34,7 @@ class ShortiesController < ApplicationController
 
   def destroy
     @shorty.destroy
-    redirect_to shorty_path, notice: 'Listing was successfully deleted.'
+    redirect_to user_path(current_user), notice: 'Listing was successfully deleted.'
   end
 
   private
