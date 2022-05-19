@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :shorties, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_many :owner_bookings, through: :shorties, source: :bookings
   validates :email, :password, presence: true
 
   def has_pending_request?(user, current_user, my_client_bookings)

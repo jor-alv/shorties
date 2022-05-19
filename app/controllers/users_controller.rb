@@ -3,8 +3,12 @@ class UsersController < ApplicationController
 
   def show
     @my_client_bookings = Booking.where(user: current_user)
-    @pending_requests = @user.has_pending_request?(@user, current_user, @my_client_bookings)
-    @confirmed_requests = @user.has_confirmed_request?(@user, current_user, @my_client_bookings)
+    @my_owner_bookings = current_user.owner_bookings
+    @pending_requests = @my_owner_bookings.where(status:"pending")
+    @confirmed_requests = @my_owner_bookings.where(status:"confirmed")
+
+    # @pending_requests = @user.has_pending_request?(@user, current_user, @my_client_bookings)
+    # @confirmed_requests = @user.has_confirmed_request?(@user, current_user, @my_client_bookings)
   end
 
   def edit; end
