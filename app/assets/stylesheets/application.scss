@@ -93,11 +93,21 @@ body {
   border-color: #0D6EFD;
 }
 
+.btn-success {
+  color: #40e29a;
+  background-color: white;
+  border-color: #40e29a;
+}
+
+.btn-success:hover {
+  color: white
+}
+
 .card-product {
   overflow: hidden;
   height: fit-content;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
 }
@@ -106,8 +116,13 @@ body {
   height: 100%;
   width: 120px;
   object-fit: cover;
-  // border-radius: 22px;
+  border-radius: 12px;
 }
+
+.home-card {
+  border-radius: 22px;
+}
+
 
 .card-product h2 {
   font-size: 16px;
@@ -144,6 +159,14 @@ i {
   margin-right: 4px;
 }
 
+.end-date {
+  margin-left: 4px;
+}
+
+.title-spacing {
+  margin: 32px 0px 12px 0px !important;
+}
+
 h3 {
   color: #414143;
   font-size: 16px;
@@ -151,11 +174,24 @@ h3 {
   margin: 0;
 }
 
+// .date-text {
+//   font-size: 14px !important;
+// }
+
 .image {
   object-fit: cover;
   // border-radius: 24px;
   height: 100%;
   width: 100%;
+}
+
+.card-avatar-bordered {
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: cover;
+  border-radius: 100%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
 }
 
 .gallery-container {
