@@ -41,6 +41,9 @@ gem 'pundit'
 # Faker
 gem 'faker'
 
+# PG search
+gem 'pg_search', '~> 2.3.0'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
