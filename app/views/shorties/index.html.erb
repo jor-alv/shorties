@@ -9,7 +9,7 @@
 </div>
 
 <div class= 'container pt-4'>
-    <h2 class="small-title mt-4">Find a short friend</h2>
+    <h2 class="small-title mt-4 ">Find a short friend</h2>
     <div class='row line-break'>
   <div class='row'>
     <% @shorties.each do |shorty| %>
@@ -21,11 +21,11 @@
                 <img src= "https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754" class="w-100"/>
               <% end %>
             <div class="card-product-infos d-flex justify-contents-between">
-              <div class="d-flex flex-column align-items-between m-2">
+              <div class="d-flex flex-column align-items-between m-1">
                 <h2><%= link_to shorty.name, shorty_path(shorty) %></h2>
                 <p class="mt-0"><%= shorty.height  %>cm</p>
                 <h2 class="m-0 pt-2 pb-2 card-trip-pricing">$<%= shorty.price %>/night</h3>
-                <p class="mt-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos reiciendis atque</p>
+                <p class="mt-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
               </div>
             </div>
         </div>
