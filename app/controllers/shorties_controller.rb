@@ -9,10 +9,32 @@ class ShortiesController < ApplicationController
 
   def index
     @shorties = policy_scope(Shorty)
+    # raise
+    @markers = @shorties.geocoded.map do |shorty|
+      {
+        lat: shorty.latitude,
+        lng: shorty.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { shorty: shorty }),
+        image_url: helpers.asset_url("danny.png")
+      }
+    end
   end
 
   def show
     @booking = Booking.new
+    # raise
+    # @coordinates = @shorty.fetch_coordinates
+    # @shorty = Shorty.find(469)
+    @markers = [{
+      lat: @shorty.latitude,
+      lng: @shorty.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { shorty: @shorty }),
+      image_url: helpers.asset_url("danny.png")
+    }]
+    # [lat: @shorty.latitude,
+    #             lng: @shorty.longitude,
+    #             info_window: render_to_string(partial: "info_window", locals: { shorty: @shorty }),
+    #             image_url: helpers.asset_url("danny.png")]
   end
 
   def create
@@ -51,6 +73,9 @@ class ShortiesController < ApplicationController
                                    :name,
                                    :price,
                                    :description,
+                                   :address,
+                                   :latitude,
+                                   :longitude,
                                    :user_id)
   end
 end

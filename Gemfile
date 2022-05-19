@@ -41,6 +41,9 @@ gem 'pundit'
 # Faker
 gem 'faker'
 
+# Geocoder
+gem 'geocoder'
+
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
