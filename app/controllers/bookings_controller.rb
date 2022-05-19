@@ -6,14 +6,17 @@ class BookingsController < ApplicationController
   end
 
   def create
-    # @booking = Booking.new(booking_params)
-    @booking = Booking.new()
+    @booking = Booking.new(booking_params)
+    # @booking = Booking.new()
     user = current_user
     @booking.user = current_user
     @booking.status = 0
     @booking.shorty = @shorty
+    if @booking.start_date < Date.today
+      flash[:alert] = "Invalid Date"
+      render :shorty
+    end
     authorize @booking
-
     if @booking.save
       redirect_to user_path(user)
     else
