@@ -15,6 +15,7 @@
 
 
 body {
+  // background-color: #f1f1f1;
   background-color: white;
 }
 
@@ -46,18 +47,24 @@ body {
   background-position: center;
   padding: 150px 0;
   height: 100vh;
+  width: 100%;
+    min-height: 100vh;
+  position: relative;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  z-index: -100;
+  opacity: 0.95;
 }
 
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 65px;
-  font-weight: bold;
-  margin-bottom: 20px;
+
+.title-short {
+  color: #FFDE18;
+  font-size: 42px;
+  padding-left: 8px;
 }
 
-.banner p {
+.banner-text p {
   font-size: 30px;
   font-family: Akshar;
   color: white;
@@ -69,14 +76,21 @@ body {
   color: black;
   padding: 16px 32px;
   border-radius: 4px;
-  background: #f6ed01;
+  background: #FFDE18;
   transition: background 0.3s ease;
   font-size: 20px;
+  opacity: 0.9 !important;
 }
 
 .btn-flat:hover {
-  background: #f6ed01;
+  background: #D93BA1;
   color: grey;
+}
+
+.btn-primary {
+  color: #0D6EFD;
+  background-color: #fff;
+  border-color: #0D6EFD;
 }
 
 .card-product {
@@ -92,6 +106,7 @@ body {
   height: 100%;
   width: 120px;
   object-fit: cover;
+  // border-radius: 22px;
 }
 
 .card-product h2 {
@@ -112,9 +127,18 @@ body {
   padding: 12px;
 }
 
-h2 {
+.card-product-infos {
+  font-size: 16px;
+}
+
+a {
   text-decoration: none;
 }
+
+h2 a {
+  color: #D93BA1;
+}
+
 
 .image {
   object-fit: cover;
@@ -139,10 +163,8 @@ h2 {
   margin: 0;
 }
 
-.card-trip {
-  // overflow: hidden;
-  // background: white;
-  // box-shadow: 0 0 15px rgba(0,0,0,0.2);
+.card-trip-pricing {
+  color: #414143;
 }
 
 .card-trip > img {
@@ -156,6 +178,7 @@ h2 {
   font-weight: bold;
   margin: 0;
 }
+
 
 .card-trip p {
   font-size: 12px;
@@ -235,9 +258,10 @@ padding: 0px 8px;
 
 .profile-photo {
   border-radius: 100%;
-  max-width: 200px;
-  height: 50%;
+  width: 200px;
+  height: 200px;
   margin-top: 24px;
+  object-fit: cover;
 }
 
 .card-product > img {
@@ -270,4 +294,115 @@ padding: 0px 8px;
 }
 .footer-links a:hover {
   opacity: 1;
+}
+
+
+
+
+// Home page animation
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #D93BA1;
+  --secondary-color: #414143;
+  --complimentary-color: #FFDE18;
+}
+
+.container .projects {
+  // min-height: 100vh;
+  // position: relative;
+  // width: 100vw;
+  //  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.projects h1 {
+  font-size: 150px;
+  color: var(--primary-color);
+  transform: translateY(-600px);
+  animation: 1.2s slideIn ease-in-out forwards 1s;
+  z-index: 10;
+  opacity: 0;
+  width: 66%;
+  position: relative;
+}
+
+.home-btn {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  transform: translateX(-800px);
+  animation: 2s slideIn ease-in-out forwards 1.2s;
+  z-index: 10;
+  opacity: 0;
+  position: relative;
+  bottom: -80px;
+}
+
+.boy-girl {
+  transform: translatey(-800px);
+  animation: 2s slideIn ease-in-out forwards 1.2s;
+  z-index: 10;
+  opacity: 0;
+  position: absolute;
+  bottom: 100px;
+  right: 50px;
+  justify-self: end;
+  max-width: 200px;
+  margin-right: 75px;
+}
+
+
+.projects h1::before {
+    content: '';
+    width: 0%;
+    height: 74px;
+    background-image: url(https://i.imgur.com/dN4riGo.png);
+    background-color: transparent;
+    background-size: auto;
+    background-position: center;
+    position: absolute;
+    bottom: -6px;
+    animation: 1s underline ease-in-out forwards 2s;
+    mix-blend-mode: screen;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    left: 0;
+    right: 0;
+    background-color: #414143;
+    transform: scale(.5);
+    // animation: .5s slideIn ease-in-out forwards, 1s skewBg ease-in-out;
+    animation: .0s slideIn ease-in-out forwards, 0s skewBg ease-in-out;
+}
+
+
+@keyframes skewBg {
+  0% {
+    transform: scale(.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes underline {
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes slideIn {
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }

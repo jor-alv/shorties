@@ -24,10 +24,11 @@ class BookingsController < ApplicationController
   def show; end
 
   def update
-    raise
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
-    redirect_to root_path
+    @booking.confirmed!
+    authorize @booking
+    redirect_to user_path(@booking.shorty.user)
   end
 
   def destroy
