@@ -8,22 +8,31 @@ class ShortiesController < ApplicationController
   end
 
   def index
+    @shorties = policy_scope(Shorty)
+    @markers = @shorties.geocoded.map do |shorty|
+      {
+        lat: shorty.latitude,
+        lng: shorty.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { shorty: shorty }),
+        image_url: helpers.asset_url("danny.png")
+      }
+    end
+
     if params[:query].present?
-      # sql_query = " \
-      #   shorties.name @@ :query \
-      #   OR shorties.height @@ :query \
-      #   OR shorties.price @@ :query \
-      # "
-      # @shorties = Shorty.where(sql_query, query: "%#{params[:query]}%")
       @shorties = policy_scope(Shorty).search_by_name_height_price(params[:query])
     else
       @shorties = policy_scope(Shorty)
     end
-    # @shorties = policy_scope(Shorty)
   end
 
   def show
     @booking = Booking.new
+    @markers = [{
+      lat: @shorty.latitude,
+      lng: @shorty.longitude,
+      info_window: render_to_string(partial: "info_window", locals: { shorty: @shorty }),
+      image_url: helpers.asset_url("danny.png")
+    }]
   end
 
   def create
@@ -62,6 +71,9 @@ class ShortiesController < ApplicationController
                                    :name,
                                    :price,
                                    :description,
+                                   :address,
+                                   :latitude,
+                                   :longitude,
                                    :user_id)
   end
 end

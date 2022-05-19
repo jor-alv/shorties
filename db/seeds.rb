@@ -51,49 +51,56 @@ Shorty.create!(height: 157,
                description: "",
                price: 350,
                user: User.find_by(first_name: "Kim"),
-               photo_url: "https://i.pinimg.com/originals/58/9a/77/589a779c7921c6a3a3a29a6dc3d691b5.jpg")
+               photo_url: "https://i.pinimg.com/originals/58/9a/77/589a779c7921c6a3a3a29a6dc3d691b5.jpg",
+               address: "1312 Papineau Avenue, Montreal, Quebec, Canada")
 
 Shorty.create!(height: 157,
                name: "Funny Kevin Hart",
                description: "",
                price: 350,
                user: User.find_by(first_name: "Kim"),
-               photo_url: "https://i.ytimg.com/vi/BXwKPbI2Wk0/maxresdefault.jpg")
+               photo_url: "https://i.ytimg.com/vi/BXwKPbI2Wk0/maxresdefault.jpg",
+               address: "3452 Sherbrooke Ouest, Montreal, Quebec, Canada")
 
 Shorty.create!(height: 157,
                name: "Waterloo Napoleon Bonaparte",
                description: "",
                price: 400,
                user: User.find_by(first_name: "Jorge"),
-               photo_url: "http://www.celebheights.org/wp-content/uploads/2014/11/Napoleon-Bonaparte.jpg")
+               photo_url: "http://www.celebheights.org/wp-content/uploads/2014/11/Napoleon-Bonaparte.jpg",
+               address: "5333 Casgrain, Montreal, Quebec, Canada")
 
 Shorty.create!(height: 157,
                name: "Emperor Napoleon Bonaparte",
                description: "",
                price: 900,
                user: User.find_by(first_name: "Jorge"),
-               photo_url: "https://www.biography.com/.image/t_share/MTc5OTkzMzI0ODg5ODQzMDMy/gettyimages-544266826.jpg")
+               photo_url: "https://www.biography.com/.image/t_share/MTc5OTkzMzI0ODg5ODQzMDMy/gettyimages-544266826.jpg",
+               address: "3800 Queen Mary Road, Montreal, Quebec, Canada")
 
 Shorty.create!(height: 147,
                name: "Black-Tie Danny DeVito",
                description: "Nice to meet you, my name is black-tie Danny Devito. I would be very pleased to help you so that the next stage of your life comes with a ladder.",
                price: 500,
                user: User.find_by(first_name: "Danny"),
-               photo_url: "https://st.depositphotos.com/1814084/1643/i/450/depositphotos_16437743-stock-photo-danny-devito.jpg")
+               photo_url: "https://st.depositphotos.com/1814084/1643/i/450/depositphotos_16437743-stock-photo-danny-devito.jpg",
+               address: "1772 rue Ontario Ouest, Montreal, Quebec, Canada")
 
 Shorty.create!(height: 147,
                name: "Business Danny DeVito",
                description: "Hello everyone, business Danny Devito here! Tired of being the shortest person at your business meetings? Well no more! I will ask you questions such as “hows the weather up there?” and assist you to your business meetings so that you look taller then a sky-scraper!",
                price: 500,
                user: User.find_by(first_name: "Danny"),
-               photo_url: "https://external-preview.redd.it/YL0Txrt2JzvJQPJ40hJ8bIIOjZju5BrfbGPcuRcuXNY.jpg?auto=webp&s=e4ce15689898818d927948cde201d5a3cfb3173e")
+               photo_url: "https://external-preview.redd.it/YL0Txrt2JzvJQPJ40hJ8bIIOjZju5BrfbGPcuRcuXNY.jpg?auto=webp&s=e4ce15689898818d927948cde201d5a3cfb3173e",
+               address: "279 Duke, Montreal, Quebec, Canada")
 
 Shorty.create!(height: 147,
                name: "Animal Danny DeVito",
                description: "Hello there, I'm animal Danny Devito!",
                price: 500,
                user: User.find_by(first_name: "Danny"),
-               photo_url: "https://i.pinimg.com/originals/d6/f9/99/d6f99926e1ee90f3cb541d303822b974.jpg")
+               photo_url: "https://i.pinimg.com/originals/d6/f9/99/d6f99926e1ee90f3cb541d303822b974.jpg",
+               address: "1689 rue de la Gauchetière, Montreal, Quebec, Canada")
 
 # 5.times do
 #   User.create!(email: Faker::Internet.email,

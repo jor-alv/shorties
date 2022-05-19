@@ -41,6 +41,9 @@ gem 'pundit'
 # Faker
 gem 'faker'
 
+# Geocoder
+gem 'geocoder'
+
 # PG search
 gem 'pg_search', '~> 2.3.0'
 
