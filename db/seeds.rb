@@ -86,7 +86,7 @@ Shorty.create!(height: 157,
                photo_url: "https://i.ytimg.com/vi/BXwKPbI2Wk0/maxresdefault.jpg",
                address: "3452 Sherbrooke Ouest, Montreal, Quebec, Canada")
 
-business_kevin_hart = Shorty.last
+funny_kevin_hart = Shorty.last
 
 # 3. waterloo_napoleon_bonaparte
 Shorty.create!(height: 157,
@@ -196,7 +196,7 @@ Booking.create!(shorty_id: black_tie_kevin_hart.id,
                 status: 1)
 
 # 8.
-Booking.create!(shorty_id: business_kevin_hart.id,
+Booking.create!(shorty_id: funny_kevin_hart.id,
                 user_id: james_campbell.id,
                 start_date: Time.new(2022, 5, 11),
                 end_date: Time.new(2022, 5, 12),
@@ -210,7 +210,7 @@ Booking.create!(shorty_id: black_tie_kevin_hart.id,
                 status: 3)
 
 # 10.
-Booking.create!(shorty_id: business_kevin_hart.id,
+Booking.create!(shorty_id: funny_kevin_hart.id,
                 user_id: kim_coquilla.id,
                 start_date: Time.new(2022, 4, 5),
                 end_date: Time.new(2022, 4, 6),
