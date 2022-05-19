@@ -9,17 +9,17 @@
 </div>
 
 <div class= 'container pt-4'>
-  <h2 class="small-title mt-4 ">Find a short friend</h2>
-  <div class='row line-break'>
-    <div class='row'>
-      <% @shorties.each do |shorty| %>
-        <div class='col col-sm-3'>
-          <div class="card-product mt-4 d-flex flex-column">
-            <% if shorty.photo_url %>
-              <img src= <%= shorty.photo_url %> />
-            <% else %>
-              <img src= "https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754" class="w-100"/>
-            <% end %>
+    <h2 class="small-title mt-4 ">Find a short friend</h2>
+    <div class='row line-break'>
+  <div class='row'>
+    <% @shorties.each do |shorty| %>
+      <div class='col col-sm-3'>
+        <div class="card-product home-card mt-4 d-flex flex-column">
+              <% if shorty.photo_url %>
+                <img src= <%= shorty.photo_url %> />
+              <% else %>
+                <img src= "https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754" class="w-100"/>
+              <% end %>
             <div class="card-product-infos d-flex justify-contents-between">
               <div class="d-flex flex-column align-items-between m-1">
                 <h2><%= link_to shorty.name, shorty_path(shorty) %></h2>
