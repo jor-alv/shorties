@@ -5,6 +5,7 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <div class="d-flex flex-row align-items-center">
     <%= form_tag shorties_path, method: :get do %>
             <%= text_field_tag :query,
               params[:query],
@@ -13,6 +14,8 @@
             %>
             <%# <%= submit_tag "Search", class: "btn btn-primary" %>
             <% end %>
+            <div class="mx-2"><i class="fa-solid fa-magnifying-glass"></i></div>
+    </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
@@ -30,10 +33,10 @@
             <%= link_to "Messages", "#", class: "nav-link" %>
           <%# </li> %>
           <li class="nav-item dropdown">
-            <%= image_tag current_user.photo_url, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag current_user.photo_url, class: "avatar-bordered dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Add a Listing", new_shorty_path, class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%# <%= link_to "Another action", "#", class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>

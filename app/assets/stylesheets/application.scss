@@ -7,12 +7,22 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "mapbox-gl/dist/mapbox-gl";
+@import "@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder";
 
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
 @import "shorties/index";
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 80px;    /* Footer height */
+}
 
 body {
   // background-color: #f1f1f1;
@@ -319,7 +329,10 @@ padding: 0px 8px;
 
 .footer {
   background: #F4F4F4;
+  position: absolute;
   display: flex;
+  bottom: 0;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   height: 75px;
