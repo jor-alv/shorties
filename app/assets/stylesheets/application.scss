@@ -13,6 +13,14 @@
 @import "pages/index";
 @import "shorties/index";
 
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 80px;    /* Footer height */
+}
 
 body {
   // background-color: #f1f1f1;
@@ -283,7 +291,10 @@ padding: 0px 8px;
 
 .footer {
   background: #F4F4F4;
+  position: absolute;
   display: flex;
+  bottom: 0;
+  width: 100%;
   align-items: center;
   justify-content: space-between;
   height: 75px;
