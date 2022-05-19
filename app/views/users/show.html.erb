@@ -5,22 +5,24 @@
 </div>
 
 <%# Listing info %>
-  <div class="row mt-4">
+  <div class="row mt-4 pb-4">
     <div class="col-lg-12">
       <div class="card-trip line-break">
       </div>
       <div class="card-trip mt-4">
-       <h2> About <%= @user.first_name %>:</h2>
-       <%=  link_to "Add a Listing", new_shorty_path, class: "btn btn-primary m-2"%>
-          <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
+      <div class="d-flex justify-content-between align-items-start">
+        <h2> About <%= @user.first_name %>:</h2>
+        <%=  link_to "Add a Listing", new_shorty_path, class: "btn btn-primary mr-2 rounded-2"%>
+      </div>
+          <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde</p>
       </div>
     </div>
 
 
   <%# Display a user's shorty listings IF they exist %>
-  <% unless @user.shorties.length == 0 %>
+  <% if @user.shorties %>
     <h2 class="smaller-title mt-4"><%= @user.first_name%>'s listed shorties:</h2>
-    <div class='row line-break'>
+    <div class='row'>
       <% @user.shorties.each do |shorty| %>
         <div class='col col-sm-6'>
           <div class="card-product mt-4 d-flex flex-column">
@@ -36,27 +38,30 @@
                 <h2 class="m-0 pt-2 pb-2 card-trip-pricing">$<%= shorty.price %>/night</h3>
                 <p class="mt-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos reiciendis atque</p>
               </div>
-              <div class="d-flex flex-column align-items-between justify-content-center">
-                <%= link_to "Edit", edit_shorties_path(shorty), class: "btn btn-primary m-2" %>
-                <%= link_to "Delete", shorty_path(shorty), method: :delete, class: "btn btn-primary m-2" %>
-              </div>
-                 <% shorty.bookings.each do |booking| %>
-                  <% if booking.pending? %>
-                    <%# <p class="btn btn-alert m-2" >Pending</p> %>
-                    <%= simple_form_for booking do |f| %>
-                      <%= f.input :status, priority: ["Pending"], collection: ["Confirmed", "Archived"], class: "btn btn-alert"%>
-                      <%= f.submit%>
+              <% if current_user == @user %>
+                <div class="d-flex flex-column align-items-between justify-content-center">
+                  <%= link_to "Edit", edit_shorties_path(shorty), class: "btn btn-primary m-2" %>
+                  <%= link_to "Delete", shorty_path(shorty), method: :delete, class: "btn btn-primary m-2" %>
+                </div>
+                  <% shorty.bookings.each do |booking| %>
+                    <% if booking.pending? %>
+                      <%# <p class="btn btn-alert m-2" >Pending</p> %>
+                      <%= simple_form_for booking do |f| %>
+                        <%= f.input :status, priority: ["Pending"], collection: ["Confirmed", "Archived"]%>
+                        <%= f.submit "Submit", class:"btn btn-success"%>
+                      <% end %>
+                    <%# elsif booking.confirmed? %>
+                      <%# <p class="btn btn-success p-1 align-self-center">Confirmed</p> %>
+                    <%# elsif booking.archived? %>
+                      <%# <p class="btn btn-secondary m-2">Completed</p> %>
                     <% end %>
-                  <% elsif booking.confirmed? %>
-                    <p class="btn btn-success m-2" %>Confirmed</p>
-                  <% elsif booking.archived? %>
-                    <p class="btn btn-secondary m-2" %>Completed</p>
-                <% end %>
-        <% end %>
+                  <% end %>
+              <% end %>
             </div>
           </div>
         </div>
       <% end %>
+    <div class="card-trip line-break"></div>
     </div>
   <% end %>
 
@@ -64,7 +69,7 @@
   <%# Display a user's shorties booked IF they exist %>
 
  <% unless @user.bookings.length == 0 %>
-    <h2>My bookings:</h2>
+    <h2 class="smaller-title mt-4">My bookings:</h2>
     <div class='row'>
       <% @my_client_bookings.each do |booking| %>
         <div class='col col-sm-6'>
@@ -74,22 +79,22 @@
             <% else %>
               <img src= "https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754" />
             <% end %>
-            <div class="card-product-infos d-flex justify-contents-between">
-              <div class="d-flex flex-column align-items-between m-2">
-                <h2><%= booking.shorty.name %></h2>
-                <p class="p-1"><%= booking.shorty.height  %>cm</p>
-                <h3>$<%= booking.shorty.price %></p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos reiciendis atque</p>
+              <div class="card-product-infos d-flex justify-contents-between">
+                <div class="d-flex flex-column align-items-between m-2">
+                  <h2><%= link_to booking.shorty.name, shorty_path(booking.shorty) %></h2>
+                  <p class="mt-0"><%= booking.shorty.height  %>cm</p>
+                  <h2 class="m-0 pt-2 pb-2 card-trip-pricing">$<%= booking.shorty.price %>/night</h3>
+                  <p class="mt-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos reiciendis atque</p>
+                </div>
+                <div class="d-flex flex-column align-items-between">
+                  <% if booking.pending? %>
+                    <%= link_to "Pending", booking_path(booking.shorty), class: "btn btn-warning m-2" %>
+                  <% end %>
+                  <%  if booking.confirmed? %>
+                    <%= link_to "Confirmed", booking_path(booking.shorty), class: "btn btn-success m-2" %>
+                  <% end %>
+                </div>
               </div>
-              <div class="d-flex flex-column align-items-between justify-content-center">
-                <%  if booking.pending? %>
-                  <%= link_to "Pending Reservation", booking_path(booking.shorty), class: "btn btn-warning m-2" %>
-                <% end %>
-                <%  if booking.confirmed? %>
-                  <%= link_to "Confirmed", booking_path(booking.shorty), class: "btn btn-success m-2" %>
-                <% end %>
-              </div>
-            </div>
           </div>
         </div>
       <% end %>
