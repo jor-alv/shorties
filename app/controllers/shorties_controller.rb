@@ -8,30 +8,43 @@ class ShortiesController < ApplicationController
   end
 
   def index
-    # @shorties = policy_scope(Shorty)
-
     if params[:query].present?
       @shorties = policy_scope(Shorty).search_by_name_height_price(params[:query])
     else
       @shorties = policy_scope(Shorty)
     end
+
     @markers = @shorties.geocoded.map do |shorty|
+      if shorty.user == User.find_by(first_name: "James")
+        image = "danny.png"
+      elsif shorty.user == User.find_by(first_name: "Kim")
+        image = "kevin.png"
+      elsif shorty.user == User.find_by(first_name: "Jorge")
+        image = "lionel.png"
+      end
       {
         lat: shorty.latitude,
         lng: shorty.longitude,
         info_window: render_to_string(partial: "info_window", locals: { shorty: shorty }),
-        image_url: helpers.asset_url("danny.png")
+        image_url: helpers.asset_url(image)
       }
     end
   end
 
   def show
     @booking = Booking.new
+    if @shorty.user == User.find_by(first_name: "James")
+      image = "danny.png"
+    elsif @shorty.user == User.find_by(first_name: "Kim")
+      image = "kevin.png"
+    elsif @shorty.user == User.find_by(first_name: "Jorge")
+      image = "lionel.png"
+    end
     @markers = [{
       lat: @shorty.latitude,
       lng: @shorty.longitude,
       info_window: render_to_string(partial: "info_window", locals: { shorty: @shorty }),
-      image_url: helpers.asset_url("danny.png")
+      image_url: helpers.asset_url(image)
     }]
   end
 
