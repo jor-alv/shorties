@@ -1,6 +1,6 @@
 <div class='container'>
   <div class="profile-header">
-    <h1 class="small-title mt-4"><%="#{@user.first_name} #{@user.last_name}'s Profile"%></h1>
+    <h1 class="small-title mt-4"><%="Hello, #{@user.first_name} #{@user.last_name}!"%></h1>
     <img src=<%=@user.photo_url%> alt="Profile photo" class="profile-photo">
 </div>
 
@@ -11,8 +11,8 @@
       </div>
       <div class="card-trip mt-4">
         <div class="d-flex justify-content-between align-items-start">
-          <h2> About <%= @user.first_name %>:</h2>
-          <%=  link_to "Add a Listing", new_shorty_path, class: "btn btn-primary mr-2 rounded-2"%>
+          <h2> Your Bio:</h2>
+          <%=  link_to "Rent Out a New Shorty!", new_shorty_path, class: "btn btn-primary mr-2 rounded-2"%>
         </div>
         <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde</p>
       </div>
