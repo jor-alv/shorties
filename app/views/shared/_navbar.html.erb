@@ -1,10 +1,11 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="https://as1.ftcdn.net/v2/jpg/02/12/27/80/1000_F_212278076_I8RtGRCYZCZndbAXmugmURFQxY3EB8KJ.jpg" /></a>
+    <a class="navbar-brand" href="/shorties">
+      <%= image_tag 'shortFriends_logo.png', alt: 'icon' %></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+    <%# <img src="/images/shortFriends_logo.png"/> %>
     <div class="d-flex flex-row align-items-center">
     <%= form_tag shorties_path, method: :get do %>
             <%= text_field_tag :query,
@@ -23,12 +24,12 @@
             <a class="nav-link" href="#">Bookings</a>
           </li> %>
           <% if user_signed_in? %>
-          <li class="nav-item active">
+          <%# <li class="nav-item active">
             <%= link_to "Home", shorties_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item active">
+          <%# </li>  %>
+          <%# <li class="nav-item active">
             <%= link_to "Profile", user_path(current_user), class: "nav-link" %>
-          </li>
+          <%# </li> %>
           <%# <li class="nav-item">
             <%= link_to "Messages", "#", class: "nav-link" %>
           <%# </li> %>
@@ -36,7 +37,7 @@
             <%= image_tag current_user.photo_url, class: "avatar-bordered dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Add a Listing", new_shorty_path, class: "dropdown-item" %>
-              <%# <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Profile", user_path(current_user), class: "dropdown-item" %>
               <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
           </li>
