@@ -12,30 +12,35 @@
     <h2 class="small-title mt-4 ">Find a short friend</h2>
     <div class='row line-break'>
   <div class='row'>
-    <% @shorties.each do |shorty| %>
-      <div class='col col-sm-3'>
-        <div class="card-product home-card mt-4 d-flex flex-column">
-              <% if shorty.photo_url %>
-                <img src= <%= shorty.photo_url %> />
-              <% else %>
-                <img src= "https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754" class="w-100"/>
-              <% end %>
-            <div class="card-product-infos d-flex justify-contents-between">
-              <div class="d-flex flex-column align-items-between m-1">
-                <h2><%= link_to shorty.name, shorty_path(shorty) %></h2>
-                <p class="mt-0"><%= shorty.height  %>cm</p>
-                <h2 class="m-0 pt-2 pb-2 card-trip-pricing">$<%= shorty.price %>/day</h3>
-                <p class="mt-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    <div class='col col-sm-9'>
+      <div class="d-flex flex-wrap">
+        <% @shorties.each do |shorty| %>
+          <div class='col col-sm-4 p-2'>
+            <div class="card-product home-card mt-4 d-flex flex-column">
+                  <% if shorty.photo_url %>
+                    <img src= <%= shorty.photo_url %> />
+                  <% else %>
+                    <img src= "https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754" class="w-100"/>
+                  <% end %>
+                <div class="card-product-infos d-flex justify-contents-between">
+                  <div class="d-flex flex-column align-items-between m-1">
+                    <h2><%= link_to shorty.name, shorty_path(shorty) %></h2>
+                    <p class="mt-0"><%= shorty.height  %>cm</p>
+                    <h2 class="m-0 pt-2 pb-2 card-trip-pricing">$<%= shorty.price %>/day</h3>
+                    <p class="mt-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+                  </div>
+                </div>
               </div>
-            </div>
           </div>
-        </div>
-      <% end %>
-<div style="width: 100%; height: 600px;"
-  data-controller="mapbox"
-  data-mapbox-markers-value="<%= @markers.to_json %>"
-  data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-</div>
+        <% end %>
+      </div>
+    </div>
+    <div class='col col-sm-3'>
+      <div class="map-column sticky-top" style="width: 100%; height: 600px;"
+        data-controller="mapbox"
+        data-mapbox-markers-value="<%= @markers.to_json %>"
+        data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
     </div>
   </div>
 </div>
