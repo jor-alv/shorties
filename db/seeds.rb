@@ -16,18 +16,45 @@ User.create!(email: 'johnlittlewood@lewagon.com',
              password: '123456',
              photo_url: 'https://theartsdesk.com/sites/default/files/styles/mast_image_landscape/public/mastimages/Screen%20shot%202012-11-24%20at%2012.25.11.png?itok=KPLvDz1f')
 
-# john_littlewood = User.last
+john_littlewood = User.last
 
 # 2. danny_devito
-# User.create!(email: 'dannydevito@lewagon.com',
-#              first_name: 'Danny',
-#              last_name: 'DeVito',
-#              password: '123456',
-#              photo_url: 'https://cdn.vox-cdn.com/thumbor/gnPngn18g1kI_jezInce3P39J9c=/0x0:3200x1800/2070x1164/filters:focal(1344x644:1856x1156):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/65316416/danny_devito.0.jpg')
+User.create!(email: 'dannydevito@lewagon.com',
+             first_name: 'Danny',
+             last_name: 'DeVito',
+             password: '123456',
+             photo_url: 'https://cdn.vox-cdn.com/thumbor/gnPngn18g1kI_jezInce3P39J9c=/0x0:3200x1800/2070x1164/filters:focal(1344x644:1856x1156):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/65316416/danny_devito.0.jpg')
 
-# danny_devito = User.last
+danny_devito = User.last
 
-# 3. yann_bouhadana
+# 3. kevin_hart
+User.create!(email: 'kevin_hart@lewagon.com',
+             first_name: 'Kevin',
+             last_name: 'Hart',
+             password: '123456',
+             photo_url: 'https://financerewind.com/wp-content/uploads/2020/09/kevin-e1599502332249.jpg')
+
+kevin_hart = User.last
+
+# 4. lionel_messi
+User.create!(email: 'lionel_messi@lewagon.com',
+             first_name: 'Lionel',
+             last_name: 'Messi',
+             password: '123456',
+             photo_url: 'https://sportslibro.com/football/wp-content/uploads/2020/03/323w.jpg')
+
+lionel_messi = User.last
+
+# 5. paul_lanza
+User.create!(email: 'paul_lanza@lewagon.com',
+             first_name: 'Paul',
+             last_name: 'Lanza',
+             password: '123456',
+             photo_url: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1649113462/whvqgnpdwxrgvpkeufb1.jpg')
+
+paul_lanza = User.last
+
+# 6. yann_bouhadana
 User.create!(email: 'yannbouhadana@lewagon.com',
              first_name: 'Yann',
              last_name: 'Bouhadana',
@@ -36,7 +63,7 @@ User.create!(email: 'yannbouhadana@lewagon.com',
 
 yann_bouhadana = User.last
 
-# 4. kim_coquilla
+# 7. kim_coquilla
 User.create!(email: 'kimcoquilla@lewagon.com',
              first_name: 'Kim',
              last_name: 'Coquilla',
@@ -45,7 +72,7 @@ User.create!(email: 'kimcoquilla@lewagon.com',
 
 kim_coquilla = User.last
 
-# 5. james_campbell
+# 8. james_campbell
 User.create!(email: 'jamescampbell@lewagon.com',
              first_name: 'James',
              last_name: 'Campbell',
@@ -54,7 +81,7 @@ User.create!(email: 'jamescampbell@lewagon.com',
 
 james_campbell = User.last
 
-# 6. jorge_alvarez
+# 9. jorge_alvarez
 User.create!(email: 'jorgealvarez@lewagon.com',
              first_name: 'Jorge',
              last_name: 'Alvarez',
@@ -66,110 +93,156 @@ jorge_alvarez = User.last
 #
 # SHORTY SEEDS
 
-# 1. party_kevin_hart
+# 1. wingman_kevin_hart
 Shorty.create!(height: 157,
-               name: "Party Kevin Hart",
+               name: "Wingman Kevin Hart",
                description: "",
+               features: "",
                price: 351,
-               user: User.find_by(first_name: "Kim"),
+               user: User.find_by(first_name: "Kevin"),
                photo_url: "https://www.etonline.com/sites/default/files/styles/max_1280x720/public/images/2016-06/KEVINHARTFIANCETALKS_1280.jpg?itok=rXMZLDBP",
                address: "4261 53e Rue, Montreal, Quebec, Canada")
 
-party_kevin_hart = Shorty.last
+wingman_kevin_hart = Shorty.last
 
-# 2. top_scorer_lionel_messi
+# 2. wingman_lionel_messi
 Shorty.create!(height: 169,
-               name: "Top Scorer Lionel Messi",
+               name: "Wingman Lionel Messi",
                description: "",
-               price: 939,
-               user: User.find_by(first_name: "Jorge"),
-               photo_url: "https://wallpapersdsc.net/wp-content/uploads/2015/10/Lionel_Messi_35.jpg",
-               address: "5333 Casgrain, Montreal, Quebec, Canada")
-
-top_scorer_lionel_messi = Shorty.last
-
-# 3. black_tie_danny_devito
-Shorty.create!(height: 147,
-               name: "Black-Tie Danny DeVito",
-               description: "Nice to meet you, my name is black-tie Danny Devito. I would be very pleased to help you so that the next stage of your life comes with a ladder.",
-               price: 631,
-               user: User.find_by(first_name: "James"),
-               photo_url: "https://album.mediaset.es/eimg/2016/12/25/kwOFHLdQlPNMEAzqbbirL1.jpg?w=1024",
-               address: "4560 Promenade Paton, Laval, Quebec, Canada")
-
-black_tie_danny_devito = Shorty.last
-
-# 4. fashion_lionel_messi
-Shorty.create!(height: 169,
-               name: "Fashion Lionel Messi",
-               description: "",
+               features: "",
                price: 783,
-               user: User.find_by(first_name: "Jorge"),
+               user: User.find_by(first_name: "Lionel"),
                photo_url: "https://healthyceleb.com/wp-content/uploads/2013/03/Lionel-Messi-Weight.jpg",
                address: "3800 Queen Mary Road, Montreal, Quebec, Canada")
 
-fashion_lionel_messi = Shorty.last
+wingman_lionel_messi = Shorty.last
 
-# 5. big_business_danny_devito
+# 3. wingman_danny_devito
 Shorty.create!(height: 147,
-               name: "Big Business Danny DeVito",
-               description: "Hello everyone, business Danny Devito here! Tired of being the shortest person at your business meetings? Well no more! I will ask you questions such as “hows the weather up there?” and assist you to your business meetings so that you look taller then a sky-scraper!",
-               price: 854,
-               user: User.find_by(first_name: "James"),
-               photo_url: "https://i.pinimg.com/originals/62/28/4e/62284e8bd5c2a5d72a74390df5c24c35.jpg",
-               address: "279 Duke, Montreal, Quebec, Canada")
+               name: "Wingman Danny DeVito",
+               description: "Nice to meet you, my name is black-tie Danny Devito. I would be very pleased to help you so that the next stage of your life comes with a ladder.",
+               features: "",
+               price: 631,
+               user: User.find_by(first_name: "Danny"),
+               photo_url: "https://album.mediaset.es/eimg/2016/12/25/kwOFHLdQlPNMEAzqbbirL1.jpg?w=1024",
+               address: "4560 Promenade Paton, Laval, Quebec, Canada")
 
-big_business_danny_devito = Shorty.last
+wingman_danny_devito = Shorty.last
 
-# 6. wierdo_kevin_hart
-Shorty.create!(height: 157,
-               name: "Wierdo Kevin Hart",
+# 4. wingman_yann_bouhadana
+Shorty.create!(height: 147,
+               name: "Wingman Yann Bouhadana",
+               description: "Need a shorty for your party? Look no further. Wingman Yann will be your plus one to whatever event you’re attending and provide an appealing personality with an uncanny disposition towards making you seem like the tallest, most charming individual at the party.",
+               features: "A wingman is a friend that you can bring to a bar or party in order to find companions more easily. They will also make you look definitively taller! The wingman is useful in case you don't already know a single person that is interested in hanging out or if you just need someone to gas you up at a party. They will come with you to party and make you feel like you're the number one superstar there."\
+                         "While you are talking to the girl you are interested in, the wingman will take care of the other girls. The wingman could be a single man, however it could be women, also known as wingwoman or winggirl. If you cannot find any friend interested in being your wingman, you may find one close to your city on shortFriends! Gone are the days of feeling short.",
+               price: 86,
+               user: User.find_by(first_name: "Yann"),
+               photo_url: "",
+               address: "5333 Casgrain, Montreal, Quebec, Canada")
+
+wingman_yann_bouhadana = Shorty.last
+
+# 5. top_scorer_lionel_messi
+Shorty.create!(height: 169,
+               name: "Top Scorer Lionel Messi",
                description: "",
-               price: 576,
-               user: User.find_by(first_name: "Kim"),
-               photo_url: "https://i2.cdn.turner.com/cnnnext/dam/assets/130702135852-faces-of-kevin-hart-mtv-show-2007-horizontal-large-gallery.jpg",
-               address: "2270 Rue Daniel, Longueuil, Quebec, Canada")
+               features: "",
+               price: 939,
+               user: User.find_by(first_name: "Lionel"),
+               photo_url: "https://wallpapersdsc.net/wp-content/uploads/2015/10/Lionel_Messi_35.jpg",
+               address: "56 Rue Louis Lepage, Terrebonne, Canada")
 
-wierdo_kevin_hart = Shorty.last
+top_scorer_lionel_messi = Shorty.last
 
-# 7. smiley_danny_devito
+# 6. smiley_danny_devito
 Shorty.create!(height: 147,
                name: "Smiley Danny DeVito",
                description: "Yo! I'm happy smiley Danny Devito!",
+               features: "",
                price: 289,
-               user: User.find_by(first_name: "James"),
+               user: User.find_by(first_name: "Danny"),
                photo_url: "https://philadelphia.cbslocal.com/wp-content/uploads/sites/15116066/2018/04/gettyimages-458783786.jpg?w=1500",
                address: "1689 rue de la Gauchetière, Montreal, Quebec, Canada")
 
 smiley_danny_devito = Shorty.last
 
-# 8. shirtless_kevin_hart
+# 7. shirtless_kevin_hart
 Shorty.create!(height: 157,
                name: "Shirtless Kevin Hart",
                description: "",
+               features: "",
                price: 712,
-               user: User.find_by(first_name: "Kim"),
+               user: User.find_by(first_name: "Kevin"),
                photo_url: "https://i.pinimg.com/736x/fd/8d/30/fd8d306d5abe98a7790e3c731c0770e7.jpg",
                address: "Kahnawake Beach, Canada")
 
 shirtless_kevin_hart = Shorty.last
 
-# 9. drunkard_lionel_messi
+# 8. drunkard_lionel_messi
 Shorty.create!(height: 169,
                name: "Drunkard Lionel Messi",
                description: "",
+               features: "",
                price: 17,
-               user: User.find_by(first_name: "Jorge"),
+               user: User.find_by(first_name: "Lionel"),
                photo_url: "https://sportzcraazy.com/wp-content/uploads/2019/04/drunk-messi.jpg",
                address: "200 Rue Pierre Bretonneau, Laval, Quebec, Canada")
 
 drunkard_lionel_messi = Shorty.last
 
+# 9. big_business_danny_devito
+Shorty.create!(height: 147,
+               name: "Big Business Danny DeVito",
+               description: "Hello everyone, business Danny Devito here! Tired of being the shortest person at your business meetings? Well no more! I will ask you questions such as “hows the weather up there?” and assist you to your business meetings so that you look taller then a sky-scraper!",
+               features: "",
+               price: 854,
+               user: User.find_by(first_name: "Danny"),
+               photo_url: "https://i.pinimg.com/originals/62/28/4e/62284e8bd5c2a5d72a74390df5c24c35.jpg",
+               address: "279 Duke, Montreal, Quebec, Canada")
+
+big_business_danny_devito = Shorty.last
+
+# 10. awesome_yann_bouhadana
+Shorty.create!(height: 147,
+               name: "Awesome Yann Bouhadana",
+               description: "",
+               features: "",
+               price: 86,
+               user: User.find_by(first_name: "Yann"),
+               photo_url: "",
+               address: "408 Rue Runnymede, Canada")
+
+awesome_yann_bouhadana = Shorty.last
+
+# 11. wierdo_kevin_hart
+Shorty.create!(height: 157,
+               name: "Wierdo Kevin Hart",
+               description: "",
+               features: "",
+               price: 576,
+               user: User.find_by(first_name: "Kevin"),
+               photo_url: "https://i2.cdn.turner.com/cnnnext/dam/assets/130702135852-faces-of-kevin-hart-mtv-show-2007-horizontal-large-gallery.jpg",
+               address: "2270 Rue Daniel, Longueuil, Quebec, Canada")
+
+wierdo_kevin_hart = Shorty.last
+
+# 10. smelly_paul_lanza
+Shorty.create!(height: 147,
+               name: "Smelly Paul Lanza",
+               description: "",
+               features: "",
+               price: 86,
+               user: User.find_by(first_name: "Paul"),
+               photo_url: "https://jasonbgraham.com/wp-content/uploads/2019/01/jasonbgraham-poop-icon.png",
+               address: "Hopital Maisonneuve-Rosemont, Canada")
+
+smelly_paul_lanza = Shorty.last
+
 #
 # BOOKING SEEDS
 
 # 1.
-Booking.create!(shorty_id: fashion_lionel_messi.id,
+Booking.create!(shorty_id: wingman_lionel_messi.id,
                 user_id: kim_coquilla.id,
                 start_date: Time.new(2022, 5, 26),
                 end_date: Time.new(2022, 5, 27),
@@ -183,7 +256,7 @@ Booking.create!(shorty_id: top_scorer_lionel_messi.id,
                 status: 1)
 
 # 3.
-Booking.create!(shorty_id: fashion_lionel_messi.id,
+Booking.create!(shorty_id: wingman_lionel_messi.id,
                 user_id: yann_bouhadana.id,
                 start_date: Time.new(2022, 5, 13),
                 end_date: Time.new(2022, 5, 14),
@@ -211,7 +284,7 @@ Booking.create!(shorty_id: shirtless_kevin_hart.id,
                 status: 0)
 
 # 7.
-Booking.create!(shorty_id: party_kevin_hart.id,
+Booking.create!(shorty_id: wingman_kevin_hart.id,
                 user_id: yann_bouhadana.id,
                 start_date: Time.new(2022, 5, 21),
                 end_date: Time.new(2022, 5, 22),
@@ -225,7 +298,7 @@ Booking.create!(shorty_id: wierdo_kevin_hart.id,
                 status: 3)
 
 # 9.
-Booking.create!(shorty_id: party_kevin_hart.id,
+Booking.create!(shorty_id: wingman_kevin_hart.id,
                 user_id: jorge_alvarez.id,
                 start_date: Time.new(2022, 3, 11),
                 end_date: Time.new(2022, 3, 12),
@@ -260,7 +333,7 @@ Booking.create!(shorty_id: big_business_danny_devito.id,
                 status: 3)
 
 # 14.
-Booking.create!(shorty_id: black_tie_danny_devito.id,
+Booking.create!(shorty_id: wingman_danny_devito.id,
                 user_id: jorge_alvarez.id,
                 start_date: Time.new(2022, 4, 22),
                 end_date: Time.new(2022, 4, 23),
