@@ -39,7 +39,7 @@
               <div class="d-flex flex-column align-items-between m-2">
                 <h2><%= link_to shorty.name, shorty_path(shorty) %></h2>
                 <p class="mt-0"><%= shorty.height  %>cm</p>
-                <h3 class="m-0 pt-2 pb-2 card-trip-pricing">$<%= shorty.price %>/night</h3>
+                <h3 class="m-0 pt-2 pb-2 card-trip-pricing">$<%= shorty.price %>/day</h3>
                 <p class="mt-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos reiciendis atque</p>
               </div>
               <% if current_user == @user %>
@@ -74,7 +74,7 @@
                   <div class="d-flex flex-column align-items-between m-2">
                     <h2><%= link_to shorty.name, shorty_path(shorty) %></h2>
                     <p class="mt-0"><%= shorty.height  %>cm</p>
-                    <h3 class="m-0 pt-2 pb-2 card-trip-pricing">$<%= shorty.price %>/night</h3>
+                    <h3 class="m-0 pt-2 pb-2 card-trip-pricing">$<%= shorty.price %>/day</h3>
                     <p class="mt-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos reiciendis atque</p>
                     <% shorty.bookings.each do |booking| %>
                       <% if booking.start_date %>
@@ -124,7 +124,7 @@
                 <h2><%= link_to shorty.name, shorty_path(shorty) %></h2>
                 <%# <p class="mt-0">Booked by <%= link_to "#{shorty.bookings[0].user.first_name} #{shorty.bookings[0].user.last_name}" , user_path(shorty.bookings[0].user)%>
                 <p class="mt-0"><%= shorty.height  %>cm</p>
-                <h3 class="m-0 pt-2 pb-2 card-trip-pricing">$<%= shorty.price %>/night</h3>
+                <h3 class="m-0 pt-2 pb-2 card-trip-pricing">$<%= shorty.price %>/day</h3>
                 <p class="mt-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos reiciendis atque</p>
               <% shorty.bookings.each do |booking| %>
                 <% if booking.start_date %>
@@ -167,7 +167,7 @@
                 <div class="d-flex flex-column align-items-between m-2">
                   <h2><%= link_to booking.shorty.name, shorty_path(booking.shorty) %></h2>
                   <p class="mt-0"><%= booking.shorty.height  %>cm</p>
-                  <h2 class="m-0 pt-2 pb-2 card-trip-pricing">$<%= booking.shorty.price %>/night</h3>
+                  <h2 class="m-0 pt-2 pb-2 card-trip-pricing">$<%= booking.shorty.price %>/day</h3>
                   <p class="mt-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dignissimos reiciendis atque</p>
                   <% if booking.start_date %>
                     <div class="d-flex mt-2">
