@@ -77,18 +77,7 @@ Shorty.create!(height: 157,
 
 party_kevin_hart = Shorty.last
 
-# 2. funny_kevin_hart
-Shorty.create!(height: 157,
-               name: "Funny Kevin Hart",
-               description: "",
-               price: 576,
-               user: User.find_by(first_name: "Kim"),
-               photo_url: "https://i2.cdn.turner.com/cnnnext/dam/assets/130702135852-faces-of-kevin-hart-mtv-show-2007-horizontal-large-gallery.jpg",
-               address: "2270 Rue Daniel, Longueuil, Quebec, Canada")
-
-funny_kevin_hart = Shorty.last
-
-# 3. top_scorer_lionel_messi
+# 2. top_scorer_lionel_messi
 Shorty.create!(height: 169,
                name: "Top Scorer Lionel Messi",
                description: "",
@@ -98,6 +87,17 @@ Shorty.create!(height: 169,
                address: "5333 Casgrain, Montreal, Quebec, Canada")
 
 top_scorer_lionel_messi = Shorty.last
+
+# 3. black_tie_danny_devito
+Shorty.create!(height: 147,
+               name: "Black-Tie Danny DeVito",
+               description: "Nice to meet you, my name is black-tie Danny Devito. I would be very pleased to help you so that the next stage of your life comes with a ladder.",
+               price: 631,
+               user: User.find_by(first_name: "James"),
+               photo_url: "https://album.mediaset.es/eimg/2016/12/25/kwOFHLdQlPNMEAzqbbirL1.jpg?w=1024",
+               address: "4560 Promenade Paton, Laval, Quebec, Canada")
+
+black_tie_danny_devito = Shorty.last
 
 # 4. fashion_lionel_messi
 Shorty.create!(height: 169,
@@ -110,29 +110,7 @@ Shorty.create!(height: 169,
 
 fashion_lionel_messi = Shorty.last
 
-# 5. drunkard_lionel_messi
-Shorty.create!(height: 169,
-               name: "Drunkard Lionel Messi",
-               description: "",
-               price: 17,
-               user: User.find_by(first_name: "Jorge"),
-               photo_url: "https://sportzcraazy.com/wp-content/uploads/2019/04/drunk-messi.jpg",
-               address: "200 Rue Pierre Bretonneau, Laval, Quebec, Canada")
-
-drunkard_lionel_messi = Shorty.last
-
-# 6. black_tie_danny_devito
-Shorty.create!(height: 147,
-               name: "Black-Tie Danny DeVito",
-               description: "Nice to meet you, my name is black-tie Danny Devito. I would be very pleased to help you so that the next stage of your life comes with a ladder.",
-               price: 631,
-               user: User.find_by(first_name: "James"),
-               photo_url: "https://album.mediaset.es/eimg/2016/12/25/kwOFHLdQlPNMEAzqbbirL1.jpg?w=1024",
-               address: "4560 Promenade Paton, Laval, Quebec, Canada")
-
-black_tie_danny_devito = Shorty.last
-
-# 7. big_business_danny_devito
+# 5. big_business_danny_devito
 Shorty.create!(height: 147,
                name: "Big Business Danny DeVito",
                description: "Hello everyone, business Danny Devito here! Tired of being the shortest person at your business meetings? Well no more! I will ask you questions such as “hows the weather up there?” and assist you to your business meetings so that you look taller then a sky-scraper!",
@@ -143,7 +121,18 @@ Shorty.create!(height: 147,
 
 big_business_danny_devito = Shorty.last
 
-# 8. smiley_danny_devito
+# 6. wierdo_kevin_hart
+Shorty.create!(height: 157,
+               name: "Wierdo Kevin Hart",
+               description: "",
+               price: 576,
+               user: User.find_by(first_name: "Kim"),
+               photo_url: "https://i2.cdn.turner.com/cnnnext/dam/assets/130702135852-faces-of-kevin-hart-mtv-show-2007-horizontal-large-gallery.jpg",
+               address: "2270 Rue Daniel, Longueuil, Quebec, Canada")
+
+wierdo_kevin_hart = Shorty.last
+
+# 7. smiley_danny_devito
 Shorty.create!(height: 147,
                name: "Smiley Danny DeVito",
                description: "Yo! I'm happy smiley Danny Devito!",
@@ -153,6 +142,28 @@ Shorty.create!(height: 147,
                address: "1689 rue de la Gauchetière, Montreal, Quebec, Canada")
 
 smiley_danny_devito = Shorty.last
+
+# 8. shirtless_kevin_hart
+Shorty.create!(height: 157,
+               name: "Shirtless Kevin Hart",
+               description: "",
+               price: 712,
+               user: User.find_by(first_name: "Kim"),
+               photo_url: "https://i.pinimg.com/736x/fd/8d/30/fd8d306d5abe98a7790e3c731c0770e7.jpg",
+               address: "2270 Rue Daniel, Longueuil, Quebec, Canada")
+
+shirtless_kevin_hart = Shorty.last
+
+# 9. drunkard_lionel_messi
+Shorty.create!(height: 169,
+               name: "Drunkard Lionel Messi",
+               description: "",
+               price: 17,
+               user: User.find_by(first_name: "Jorge"),
+               photo_url: "https://sportzcraazy.com/wp-content/uploads/2019/04/drunk-messi.jpg",
+               address: "200 Rue Pierre Bretonneau, Laval, Quebec, Canada")
+
+drunkard_lionel_messi = Shorty.last
 
 #
 # BOOKING SEEDS
@@ -193,7 +204,7 @@ Booking.create!(shorty_id: drunkard_lionel_messi.id,
                 status: 3)
 
 # 6.
-Booking.create!(shorty_id: funny_kevin_hart.id,
+Booking.create!(shorty_id: shirtless_kevin_hart.id,
                 user_id: jorge_alvarez.id,
                 start_date: Time.new(2022, 5, 28),
                 end_date: Time.new(2022, 5, 29),
@@ -207,7 +218,7 @@ Booking.create!(shorty_id: party_kevin_hart.id,
                 status: 1)
 
 # 8.
-Booking.create!(shorty_id: funny_kevin_hart.id,
+Booking.create!(shorty_id: wierdo_kevin_hart.id,
                 user_id: james_campbell.id,
                 start_date: Time.new(2022, 5, 11),
                 end_date: Time.new(2022, 5, 12),
@@ -221,7 +232,7 @@ Booking.create!(shorty_id: party_kevin_hart.id,
                 status: 3)
 
 # 10.
-Booking.create!(shorty_id: funny_kevin_hart.id,
+Booking.create!(shorty_id: shirtless_kevin_hart.id,
                 user_id: kim_coquilla.id,
                 start_date: Time.new(2022, 4, 5),
                 end_date: Time.new(2022, 4, 6),
