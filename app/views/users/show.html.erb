@@ -32,6 +32,11 @@
           <div class="card-product mt-4 d-flex flex-column">
               <% if shorty.photo_url %>
                 <img src= <%= shorty.photo_url %> />
+              <% elsif !shorty.photos.empty? %>
+                <%# <% shorty.photos.each do |photo| %>
+                    <%= cl_image_tag shorty.photos[0].key, height: 300, width: 400, crop: :fill %>
+                  <%# <% end %>
+                <%# <%= cl_image_tag shorty.photo.key, height: 300, width: 400, crop: :fill %>
               <% else %>
                 <img src= "https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754" class="w-100"/>
               <% end %>
@@ -67,6 +72,11 @@
               <div class="card-product mt-4 d-flex flex-column">
                   <% if shorty.photo_url %>
                     <img src= <%= shorty.photo_url %> />
+                  <% elsif !shorty.photos.empty? %>
+                    <%# <% shorty.photos.each do |photo| %>
+                      <%= cl_image_tag shorty.photos[0].key, height: 300, width: 400, crop: :fill %>
+                    <%# <% end %>
+                    <%# <%= cl_image_tag shorty.photo.key, height: 300, width: 400, crop: :fill %>
                   <% else %>
                     <img src= "https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754" class="w-100"/>
                   <% end %>

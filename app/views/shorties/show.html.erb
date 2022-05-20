@@ -9,22 +9,27 @@
     <div class="row">
       <div class="col-lg-8 mt-2 mb-2">
         <img
-          src="https://www.insidehook.com/wp-content/uploads/2021/07/Danny-DeVito-e1627433269130.jpg?fit=1200%2C800"
+          src="<%= cl_image_path(@shorty.photos[0].key) %>"
           alt="Table Full of Spices"
           class=" shadow-1-strong rounded-3 gallery-container image"
         />
+        <%# <%= cl_image_tag @shorty.photos[0].key, height: 300, width: 400, crop: :fill %>
+
       </div>
       <div class="col-lg-4 col-md-12 mb-4 mt-2 mb-lg-0 d-flex flex-column gallery-container">
         <img
-          src="https://i.guim.co.uk/img/static/sys-images/Guardian/About/General/2013/1/3/1357234122373/QA-Danny-DeVito-008.jpg?width=620&quality=85&auto=format&fit=max&s=fb569632643fd6e0beecaf717339c9a0"
+          src="<%= cl_image_path(@shorty.photos[1].key) %>"
           class="w-100 h-25 d-inline-block shadow-1-strong rounded-3 mb-4 image"
           alt="Boat on Calm Water"
         />
+        <%# <%= cl_image_tag @shorty.photos[1].key, height: 300, width: 400, crop: :fill %>
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdEjVoePWpnfBpnmZ2JmMwH0F-7qKxADhiBksaS5G8mAm78ByYJdOgdywJPHMDk_ARhjw&usqp=CAU"
+          src="<%= cl_image_path(@shorty.photos[2].key) %>"
           class="w-100 h-75 shadow-1-strong rounded-3 image overflow-hidden"
           alt="Wintry Mountain Landscape"
         />
+        <%# <%= cl_image_tag @shorty.photos[2].key, height: 300, width: 400, crop: :fill %>
+
       </div>
     </div>
   </div>
