@@ -12,7 +12,7 @@
       <div class="card-trip mt-4">
         <div class="d-flex justify-content-between align-items-start">
           <h2> Your Bio:</h2>
-          <%=  link_to "Rent Out a New Shorty!", new_shorty_path, class: "btn btn-primary mr-2 rounded-2"%>
+          <%=  link_to "Add a New Shorty!", new_shorty_path, class: "btn btn-primary mr-2 rounded-2"%>
         </div>
         <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde</p>
       </div>
@@ -22,7 +22,7 @@
   <%# Display a user's shorty listings IF they exist %>
   <% if @user.shorties.size.positive? %>
     <% if @user == current_user %>
-      <h2 class="smaller-title mt-4 title-spacing">Active listings:</h2>
+      <h2 class="smaller-title mt-4 title-spacing">Your Shorties:</h2>
     <% else %>
       <h2 class="smaller-title mt-4"><%= @user.first_name%>'s current listings:</h2>
     <% end %>
@@ -63,7 +63,7 @@
 
   <%# Display current user's pending requests if they exist %>
   <% if @pending_requests.size.positive? %>
-    <h2 class="smaller-title mt-4 title-spacing">Pending listings:</h2>
+    <h2 class="smaller-title mt-4 title-spacing">Pending requests:</h2>
       <div class='row'>
         <% @user.shorties.each do |shorty| %>
           <% shorty.bookings.each do |booking| %>
@@ -119,7 +119,7 @@
 
   <%# Display current user's confirmed requests IF they exist %>
   <% if @confirmed_requests.size.positive? %>
-    <h2 class="smaller-title mt-4 title-spacing">Confirmed listings:</h2>
+    <h2 class="smaller-title mt-4 title-spacing">Confirmed requests:</h2>
       <div class='row'>
         <% @user.shorties.each do |shorty| %>
           <div class='col col-sm-6'>
@@ -163,7 +163,7 @@
 
   <%# Display a user's shorties booked IF they exist %>
   <% if @user.bookings.length >= 1 && @user == current_user %>
-    <h2 class="smaller-title mt-4 title-spacing">My bookings:</h2>
+    <h2 class="smaller-title mt-4 title-spacing">Your requests and bookings:</h2>
     <div class='row'>
       <% @my_client_bookings.each do |booking| %>
         <div class='col col-sm-6'>
