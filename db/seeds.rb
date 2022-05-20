@@ -114,7 +114,7 @@ fashion_lionel_messi = Shorty.last
 Shorty.create!(height: 169,
                name: "Drunkard Lionel Messi",
                description: "",
-               price: 631,
+               price: 17,
                user: User.find_by(first_name: "Jorge"),
                photo_url: "https://sportzcraazy.com/wp-content/uploads/2019/04/drunk-messi.jpg",
                address: "200 Rue Pierre Bretonneau, Laval, Quebec, Canada")
@@ -125,7 +125,7 @@ drunkard_lionel_messi = Shorty.last
 Shorty.create!(height: 147,
                name: "Black-Tie Danny DeVito",
                description: "Nice to meet you, my name is black-tie Danny Devito. I would be very pleased to help you so that the next stage of your life comes with a ladder.",
-               price: 17,
+               price: 631,
                user: User.find_by(first_name: "James"),
                photo_url: "https://album.mediaset.es/eimg/2016/12/25/kwOFHLdQlPNMEAzqbbirL1.jpg?w=1024",
                address: "4560 Promenade Paton, Laval, Quebec, Canada")
