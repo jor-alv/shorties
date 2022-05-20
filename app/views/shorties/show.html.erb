@@ -14,15 +14,15 @@
           alt="Table Full of Spices"
           class=" shadow-1-strong gallery-container image shorty-image big-shorty-image"
         />
-        <% elsif !@shorty.photos.empty? %>
-        <img
-          src="<%= cl_image_path(@shorty.photos[0].key) %>"
-          alt="Table Full of Spices"
-          class=" shadow-1-strong rounded-3 gallery-container image big-shorty-image"
-        />
+        <%# elsif !@shorty.photos.empty? %>
+        <%# <img %>
+        <%# src="<%#= cl_image_path(@shorty.photos[0].key) %>
+          <%# alt="Table Full of Spices" %>
+          <%# class=" shadow-1-strong rounded-3 gallery-container image big-shorty-image" %>
+        <%# /> %>
         <% else %>
           <img
-          src="https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754"
+          src="yann.png"
           alt="Table Full of Spices"
           class=" shadow-1-strong gallery-container image shorty-image big-shorty-image"
         />
@@ -40,25 +40,25 @@
           alt="Table Full of Spices"
           class="w-100 h-75 shadow-1-strong rounded-3 image overflow-hidden medium-shorty-image"
         />
-        <% elsif !@shorty.photos.empty? %>
-        <img
-          src="<%= cl_image_path(@shorty.photos[1].key) %>"
-          class="w-100 h-25 d-inline-block shadow-1-strong rounded-3 mb-4 image small-shorty-image"
-          alt="Boat on Calm Water"
-        />
-        <img
-          src="<%= cl_image_path(@shorty.photos[2].key) %>"
-          class="w-100 h-75 shadow-1-strong rounded-3 image overflow-hidden medium-shorty-image"
-          alt="Wintry Mountain Landscape"
-        />
+        <%# elsif !@shorty.photos.empty? %>
+        <%# <img %>
+          <%# src="<%= cl_image_path(@shorty.photos[1].key) %>
+          <%# class="w-100 h-25 d-inline-block shadow-1-strong rounded-3 mb-4 image small-shorty-image" %>
+          <%# alt="Boat on Calm Water" %>
+        <%# /> %>
+        <%# <img %>
+          <%# src="<%= cl_image_path(@shorty.photos[2].key) %>
+          <%# class="w-100 h-75 shadow-1-strong rounded-3 image overflow-hidden medium-shorty-image" %>
+          <%# alt="Wintry Mountain Landscape" %>
+        <%# /> %>
         <% else %>
         <img
-          src="https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754"
+          src="yann.png"
           alt="Table Full of Spices"
           class="w-100 h-25 d-inline-block shadow-1-strong rounded-3 mb-4 image small-shorty-image"
         />
         <img
-          src="https://i.scdn.co/image/ab67616d0000b273b3f33290e08fcb3ae9b39754"
+          src="yann.png"
           alt="Table Full of Spices"
           class="w-100 h-75 shadow-1-strong rounded-3 image overflow-hidden medium-shorty-image"
         />
@@ -81,17 +81,18 @@
       </div>
       <div class="card-trip mt-4">
        <h2> About <%= @shorty.name %>:</h2>
-          <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
+          <p class="line-break pb-4"><%= @shorty.description %></p>
       </div>
       <div class="card-trip line-break">
         <h2> What this shorty offers:</h2>
         <div class="row">
-          <div class="col-lg-6">
-            <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
+          <div class="col-lg-12">
+            <p class="line-break pb-4"><%= @shorty.features %></p>
           </div>
-          <div class="col-lg-6">
+          <%# if two columns are preferred: %>
+          <%# <div class="col-lg-6">
             <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
-          </div>
+          </div> %>
         </div>
       </div>
     </div>
@@ -121,12 +122,8 @@
     </div>
 
     <%# Additional info %>
-    <div class="col-lg-8">
-    </div>
-
-    <%# Put further left-side columns here %>
-
-    <%# Mapbox %>
+    <%# <div class="col-lg-8">
+    </div> %>
 
   </div>
 </div>
