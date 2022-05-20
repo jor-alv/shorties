@@ -15,13 +15,13 @@ class ShortiesController < ApplicationController
     end
 
     @markers = @shorties.geocoded.map do |shorty|
-      if @shorty.user == User.find_by(first_name: "Danny")
+      if shorty.user == User.find_by(first_name: "Danny")
         image = "danny.png"
-      elsif @shorty.user == User.find_by(first_name: "Kevin") || User.find_by(first_name: "Paul") || User.find_by(first_name: "James")
+      elsif shorty.user == User.find_by(first_name: "Kevin") || User.find_by(first_name: "Paul") || User.find_by(first_name: "James")
         image = "kevin.png"
-      elsif @shorty.user == User.find_by(first_name: "Lionel")
+      elsif shorty.user == User.find_by(first_name: "Lionel")
         image = "lionel.png"
-      elsif @shorty.user == User.find_by(first_name: "Yann")
+      elsif shorty.user == User.find_by(first_name: "Yann")
         image = "yann.png"
       end
       {
