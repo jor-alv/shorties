@@ -70,7 +70,8 @@ body {
 
 .title-short {
   color: #FFDE18;
-  font-size: 42px;
+  font-size: 106px;
+  letter-spacing: -0.5px;
   padding-left: 8px;
 }
 
@@ -423,9 +424,10 @@ padding: 0px 8px;
     background-image: url(https://i.imgur.com/dN4riGo.png);
     background-color: transparent;
     background-size: auto;
-    background-position: center;
+    background-position: auto;
     position: absolute;
     bottom: -6px;
+    right: -10 px;
     animation: 1s underline ease-in-out forwards 2s;
     mix-blend-mode: screen;
 }
