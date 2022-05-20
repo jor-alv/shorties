@@ -81,7 +81,7 @@ party_kevin_hart = Shorty.last
 Shorty.create!(height: 157,
                name: "Funny Kevin Hart",
                description: "",
-               price: 467,
+               price: 576,
                user: User.find_by(first_name: "Kim"),
                photo_url: "https://i2.cdn.turner.com/cnnnext/dam/assets/130702135852-faces-of-kevin-hart-mtv-show-2007-horizontal-large-gallery.jpg",
                address: "2270 Rue Daniel, Longueuil, Quebec, Canada")
@@ -125,7 +125,7 @@ drunkard_lionel_messi = Shorty.last
 Shorty.create!(height: 147,
                name: "Black-Tie Danny DeVito",
                description: "Nice to meet you, my name is black-tie Danny Devito. I would be very pleased to help you so that the next stage of your life comes with a ladder.",
-               price: 631,
+               price: 17,
                user: User.find_by(first_name: "James"),
                photo_url: "https://album.mediaset.es/eimg/2016/12/25/kwOFHLdQlPNMEAzqbbirL1.jpg?w=1024",
                address: "4560 Promenade Paton, Laval, Quebec, Canada")
