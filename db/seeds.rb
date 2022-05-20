@@ -150,7 +150,7 @@ Shorty.create!(height: 157,
                price: 712,
                user: User.find_by(first_name: "Kim"),
                photo_url: "https://i.pinimg.com/736x/fd/8d/30/fd8d306d5abe98a7790e3c731c0770e7.jpg",
-               address: "2270 Rue Daniel, Longueuil, Quebec, Canada")
+               address: "Kahnawake Beach, Canada")
 
 shirtless_kevin_hart = Shorty.last
 
