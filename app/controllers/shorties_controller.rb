@@ -87,6 +87,7 @@ class ShortiesController < ApplicationController
                                    :address,
                                    :latitude,
                                    :longitude,
-                                   :user_id)
+                                   :user_id,
+                                   photos: [])
   end
 end
