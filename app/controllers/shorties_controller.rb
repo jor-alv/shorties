@@ -15,13 +15,14 @@ class ShortiesController < ApplicationController
     end
 
     @markers = @shorties.geocoded.map do |shorty|
-      if shorty.user == User.find_by(first_name: "Danny")
+      case shorty.user
+      when User.find_by(first_name: "Danny")
         image = "danny.png"
-      elsif shorty.user == User.find_by(first_name: "Kevin") || User.find_by(first_name: "Paul") || User.find_by(first_name: "James")
-        image = "kevin.png"
-      elsif shorty.user == User.find_by(first_name: "Lionel")
+      when User.find_by(first_name: "Lionel")
         image = "lionel.png"
-      elsif shorty.user == User.find_by(first_name: "Yann")
+      when User.find_by(first_name: "Kevin")
+        image = "kevin.png"
+      else
         image = "yann.png"
       end
       {
@@ -35,13 +36,14 @@ class ShortiesController < ApplicationController
 
   def show
     @booking = Booking.new
-    if @shorty.user == User.find_by(first_name: "Danny")
+    case @shorty.user
+    when User.find_by(first_name: "Danny")
       image = "danny.png"
-    elsif @shorty.user == User.find_by(first_name: "Kevin") || User.find_by(first_name: "Paul") || User.find_by(first_name: "James")
-      image = "kevin.png"
-    elsif @shorty.user == User.find_by(first_name: "Lionel")
+    when User.find_by(first_name: "Lionel")
       image = "lionel.png"
-    elsif @shorty.user == User.find_by(first_name: "Yann")
+    when User.find_by(first_name: "Kevin")
+      image = "kevin.png"
+    else
       image = "yann.png"
     end
     @markers = [{
@@ -67,7 +69,7 @@ class ShortiesController < ApplicationController
 
   def update
     if @shorty.update(shorty_params)
-      redirect_to @shorty, notice: 'Information was successfully updated.'
+      redirect_to @shorty, notice: 'Information was successfully updated!'
     end
   end
 
