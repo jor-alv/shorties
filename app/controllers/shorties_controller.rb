@@ -35,14 +35,12 @@ class ShortiesController < ApplicationController
     @booking = Booking.new
     if @shorty.user == User.find_by(first_name: "Danny")
       image = "danny.png"
-    elsif @shorty.user == User.find_by(first_name: "Kevin")
+    elsif @shorty.user == User.find_by(first_name: "Kevin") || User.find_by(first_name: "Paul") || User.find_by(first_name: "James")
       image = "kevin.png"
     elsif @shorty.user == User.find_by(first_name: "Lionel")
       image = "lionel.png"
     elsif @shorty.user == User.find_by(first_name: "Yann")
       image = "yann.png"
-    else
-      image = "kevin.png"
     end
     @markers = [{
       lat: @shorty.latitude,
