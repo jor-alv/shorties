@@ -185,6 +185,9 @@
                   <%  if booking.confirmed? %>
                     <%= link_to "Confirmed", booking_path(booking.shorty), class: "btn btn-success m-2" %>
                   <% end %>
+                  <%  if booking.archived? %>
+                    <%= link_to "Archived", booking_path(booking.shorty), class: "btn btn-ghost m-2" %>
+                  <% end %>
                 </div>
               </div>
           </div>
