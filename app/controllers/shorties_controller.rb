@@ -84,10 +84,12 @@ class ShortiesController < ApplicationController
                                    :name,
                                    :price,
                                    :description,
+                                   :features,
                                    :address,
                                    :latitude,
                                    :longitude,
                                    :user_id,
+                                   :photo_url,
                                    photos: [])
   end
 end
