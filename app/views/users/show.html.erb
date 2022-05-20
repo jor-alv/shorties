@@ -20,7 +20,7 @@
 
 
   <%# Display a user's shorty listings IF they exist %>
-  <% if @user.shorties %>
+  <% if @user.shorties.size.positive? %>
     <% if @user == current_user %>
       <h2 class="smaller-title mt-4 title-spacing">Active listings:</h2>
     <% else %>

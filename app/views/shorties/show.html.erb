@@ -45,29 +45,6 @@
        <h2> About <%= @shorty.name %>:</h2>
           <p class="line-break pb-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus delectus suscipit totam animi modi dolorem fugit? Sapiente, pariatur eum minus, fugiat magni unde, rem deleniti voluptatum illo deserunt expedita dolor!</p>
       </div>
-    </div>
-
-    <%# Book now card %>
-    <div class="col-lg-4 d-flex sticky-top">
-      <div class="card shadow mb-2 bg-body rounded overflow-hidden w-100">
-        <div class="card-body" id="billing">
-          <div class="d-flex justify-content-between text-center mt-4" id="btns">
-              <div class="me-2 w-100">
-                <%= simple_form_for [@shorty, @booking] do |f| %>
-                  <%# <%= f.input :username %>
-                  <%= f.input :start_date, as: :date, html5: true %>
-                  <%= f.input :end_date, as: :date, html5: true %>
-                  <%= f.button :submit, label: "Book now", class: "btn btn-primary" %>
-                <% end %>
-                <%# <%= link_to "Book now", create_booking_path(@shorty), class:"btn btn-primary" %>
-              </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <%# Additional info %>
-    <div class="col-lg-8">
       <div class="card-trip line-break">
         <h2> What this shorty offers:</h2>
         <div class="row">
@@ -81,14 +58,37 @@
       </div>
     </div>
 
+    <%# Book now card %>
+    <div class="col-lg-4 ">
+      <div class="card mb-2 book-now bg-body overflow-hidden w-100">
+        <div class="card-body">
+          <div class="d-flex justify-content-between text-center">
+              <div class="me-2 w-100">
+                <%= simple_form_for [@shorty, @booking] do |f| %>
+                  <%# <%= f.input :username %>
+                  <%= f.input :start_date, as: :date, html5: true %>
+                  <%= f.input :end_date, as: :date, html5: true %>
+                  <%= f.button :submit, label: "Book now", class: "btn btn-primary" %>
+                <% end %>
+                <%# <%= link_to "Book now", create_booking_path(@shorty), class:"btn btn-primary" %>
+              </div>
+          </div>
+        </div>
+      </div>
+        <div class="map-shorty"style="width: 100%; height: 300px;"
+          data-controller="mapbox"
+          data-mapbox-markers-value="<%= @markers.to_json %>"
+          data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        </div>
+    </div>
+
+    <%# Additional info %>
+    <div class="col-lg-8">
+    </div>
+
     <%# Put further left-side columns here %>
 
     <%# Mapbox %>
-    <div style="width: 100%; height: 600px;"
-      data-controller="mapbox"
-      data-mapbox-markers-value="<%= @markers.to_json %>"
-      data-mapbox-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
 
   </div>
 </div>

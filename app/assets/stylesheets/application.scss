@@ -195,6 +195,25 @@ h3 {
   width: 100%;
 }
 
+.book-now {
+  background-color: #F4F4F4;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  font-size: 14px !important;
+  background-color: white !important;
+}
+
+.book-now .btn-primary {
+  background-color: white !important;
+  color: #D93BA1 !important;
+  border-color: #D93BA1 !important;
+}
+
+.map-shorty {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+}
+
 .card-avatar-bordered {
   width: 30px !important;
   height: 30px !important;
