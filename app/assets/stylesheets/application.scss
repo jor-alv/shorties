@@ -196,6 +196,18 @@ h3 {
   width: 100%;
 }
 
+.big-shorty-image {
+  border-radius: 18px 0px 0px 18px !important;
+}
+
+.small-shorty-image {
+  border-radius: 0px 18px 0px 0px !important;
+}
+
+.medium-shorty-image {
+  border-radius: 0px 0px 18px 0px !important;
+}
+
 .book-now {
   background-color: #F4F4F4;
   border-radius: 12px;

@@ -12,13 +12,13 @@
         <img
           src="<%= @shorty.photo_url %>"
           alt="Table Full of Spices"
-          class=" shadow-1-strong rounded-3 gallery-container image"
+          class=" shadow-1-strong gallery-container image shorty-image big-shorty-image"
         />
         <% else %>
         <img
           src="<%= cl_image_path(@shorty.photos[0].key) %>"
           alt="Table Full of Spices"
-          class=" shadow-1-strong rounded-3 gallery-container image"
+          class=" shadow-1-strong rounded-3 gallery-container image big-shorty-image"
         />
         <% end %>
       </div>
@@ -27,22 +27,22 @@
         <img
           src="<%= @shorty.photo_url %>"
           alt="Table Full of Spices"
-          class=" shadow-1-strong rounded-3 gallery-container image"
+          class="w-100 h-25 d-inline-block shadow-1-strong rounded-3 mb-4 image small-shorty-image"
         />
         <img
           src="<%= @shorty.photo_url %>"
           alt="Table Full of Spices"
-          class=" shadow-1-strong rounded-3 gallery-container image"
+          class="w-100 h-75 shadow-1-strong rounded-3 image overflow-hidden medium-shorty-image"
         />
         <% else %>
         <img
           src="<%= cl_image_path(@shorty.photos[1].key) %>"
-          class="w-100 h-25 d-inline-block shadow-1-strong rounded-3 mb-4 image"
+          class="w-100 h-25 d-inline-block shadow-1-strong rounded-3 mb-4 image small-shorty-image"
           alt="Boat on Calm Water"
         />
         <img
           src="<%= cl_image_path(@shorty.photos[2].key) %>"
-          class="w-100 h-75 shadow-1-strong rounded-3 image overflow-hidden"
+          class="w-100 h-75 shadow-1-strong rounded-3 image overflow-hidden medium-shorty-image"
           alt="Wintry Mountain Landscape"
         />
         <% end %>
