@@ -66,116 +66,127 @@ jorge_alvarez = User.last
 #
 # SHORTY SEEDS
 
-# 1. black_tie_kevin_hart
+# 1. party_kevin_hart
 Shorty.create!(height: 157,
-               name: "Black-Tie Kevin Hart",
+               name: "Party Kevin Hart",
                description: "",
-               price: 350,
+               price: 351,
                user: User.find_by(first_name: "Kim"),
-               photo_url: "https://i.pinimg.com/originals/58/9a/77/589a779c7921c6a3a3a29a6dc3d691b5.jpg",
-               address: "1312 Papineau Avenue, Montreal, Quebec, Canada")
+               photo_url: "https://www.etonline.com/sites/default/files/styles/max_1280x720/public/images/2016-06/KEVINHARTFIANCETALKS_1280.jpg?itok=rXMZLDBP",
+               address: "4261 53e Rue, Montreal, Quebec, Canada")
 
-black_tie_kevin_hart = Shorty.last
+party_kevin_hart = Shorty.last
 
 # 2. funny_kevin_hart
 Shorty.create!(height: 157,
                name: "Funny Kevin Hart",
                description: "",
-               price: 350,
+               price: 467,
                user: User.find_by(first_name: "Kim"),
-               photo_url: "https://i.ytimg.com/vi/BXwKPbI2Wk0/maxresdefault.jpg",
-               address: "3452 Sherbrooke Ouest, Montreal, Quebec, Canada")
+               photo_url: "https://i2.cdn.turner.com/cnnnext/dam/assets/130702135852-faces-of-kevin-hart-mtv-show-2007-horizontal-large-gallery.jpg",
+               address: "2270 Rue Daniel, Longueuil, Quebec, Canada")
 
 funny_kevin_hart = Shorty.last
 
-# 3. waterloo_napoleon_bonaparte
-Shorty.create!(height: 157,
-               name: "Waterloo Napoleon Bonaparte",
+# 3. top_scorer_lionel_messi
+Shorty.create!(height: 169,
+               name: "Top Scorer Lionel Messi",
                description: "",
-               price: 400,
+               price: 939,
                user: User.find_by(first_name: "Jorge"),
-               photo_url: "http://www.celebheights.org/wp-content/uploads/2014/11/Napoleon-Bonaparte.jpg",
+               photo_url: "https://wallpapersdsc.net/wp-content/uploads/2015/10/Lionel_Messi_35.jpg",
                address: "5333 Casgrain, Montreal, Quebec, Canada")
 
-waterloo_napoleon_bonaparte = Shorty.last
+top_scorer_lionel_messi = Shorty.last
 
-# 4. emperor_napoleon_bonaparte
-Shorty.create!(height: 157,
-               name: "Emperor Napoleon Bonaparte",
+# 4. fashion_lionel_messi
+Shorty.create!(height: 169,
+               name: "Fashion Lionel Messi",
                description: "",
-               price: 900,
+               price: 783,
                user: User.find_by(first_name: "Jorge"),
-               photo_url: "https://www.biography.com/.image/t_share/MTc5OTkzMzI0ODg5ODQzMDMy/gettyimages-544266826.jpg",
+               photo_url: "https://healthyceleb.com/wp-content/uploads/2013/03/Lionel-Messi-Weight.jpg",
                address: "3800 Queen Mary Road, Montreal, Quebec, Canada")
 
-emperor_napoleon_bonaparte = Shorty.last
+fashion_lionel_messi = Shorty.last
 
-# 5. black_tie_danny_devito
+# 5. drunkard_lionel_messi
+Shorty.create!(height: 169,
+               name: "Drunkard Lionel Messi",
+               description: "",
+               price: 631,
+               user: User.find_by(first_name: "Jorge"),
+               photo_url: "https://sportzcraazy.com/wp-content/uploads/2019/04/drunk-messi.jpg",
+               address: "200 Rue Pierre Bretonneau, Laval, Quebec, Canada")
+
+drunkard_lionel_messi = Shorty.last
+
+# 6. black_tie_danny_devito
 Shorty.create!(height: 147,
                name: "Black-Tie Danny DeVito",
                description: "Nice to meet you, my name is black-tie Danny Devito. I would be very pleased to help you so that the next stage of your life comes with a ladder.",
-               price: 500,
+               price: 631,
                user: User.find_by(first_name: "James"),
-               photo_url: "https://st.depositphotos.com/1814084/1643/i/450/depositphotos_16437743-stock-photo-danny-devito.jpg",
-               address: "1772 rue Ontario Ouest, Montreal, Quebec, Canada")
+               photo_url: "https://album.mediaset.es/eimg/2016/12/25/kwOFHLdQlPNMEAzqbbirL1.jpg?w=1024",
+               address: "4560 Promenade Paton, Laval, Quebec, Canada")
 
 black_tie_danny_devito = Shorty.last
 
-# 6. business_danny_devito
+# 7. big_business_danny_devito
 Shorty.create!(height: 147,
-               name: "Business Danny DeVito",
+               name: "Big Business Danny DeVito",
                description: "Hello everyone, business Danny Devito here! Tired of being the shortest person at your business meetings? Well no more! I will ask you questions such as “hows the weather up there?” and assist you to your business meetings so that you look taller then a sky-scraper!",
-               price: 500,
+               price: 854,
                user: User.find_by(first_name: "James"),
-               photo_url: "https://external-preview.redd.it/YL0Txrt2JzvJQPJ40hJ8bIIOjZju5BrfbGPcuRcuXNY.jpg?auto=webp&s=e4ce15689898818d927948cde201d5a3cfb3173e",
+               photo_url: "https://i.pinimg.com/originals/62/28/4e/62284e8bd5c2a5d72a74390df5c24c35.jpg",
                address: "279 Duke, Montreal, Quebec, Canada")
 
-business_danny_devito = Shorty.last
+big_business_danny_devito = Shorty.last
 
-# 7. animal_danny_devito
+# 8. smiley_danny_devito
 Shorty.create!(height: 147,
-               name: "Animal Danny DeVito",
-               description: "Hello there, I'm animal Danny Devito!",
-               price: 500,
+               name: "Smiley Danny DeVito",
+               description: "Yo! I'm happy smiley Danny Devito!",
+               price: 289,
                user: User.find_by(first_name: "James"),
-               photo_url: "https://i.pinimg.com/originals/d6/f9/99/d6f99926e1ee90f3cb541d303822b974.jpg",
+               photo_url: "https://philadelphia.cbslocal.com/wp-content/uploads/sites/15116066/2018/04/gettyimages-458783786.jpg?w=1500",
                address: "1689 rue de la Gauchetière, Montreal, Quebec, Canada")
 
-animal_danny_devito = Shorty.last
+smiley_danny_devito = Shorty.last
 
 #
 # BOOKING SEEDS
 
 # 1.
-Booking.create!(shorty_id: emperor_napoleon_bonaparte.id,
+Booking.create!(shorty_id: fashion_lionel_messi.id,
                 user_id: kim_coquilla.id,
                 start_date: Time.new(2022, 5, 26),
                 end_date: Time.new(2022, 5, 27),
                 status: 0)
 
 # 2.
-Booking.create!(shorty_id: waterloo_napoleon_bonaparte.id,
+Booking.create!(shorty_id: top_scorer_lionel_messi.id,
                 user_id: james_campbell.id,
                 start_date: Time.new(2022, 5, 23),
                 end_date: Time.new(2022, 5, 24),
                 status: 1)
 
 # 3.
-Booking.create!(shorty_id: emperor_napoleon_bonaparte.id,
+Booking.create!(shorty_id: fashion_lionel_messi.id,
                 user_id: yann_bouhadana.id,
                 start_date: Time.new(2022, 5, 13),
                 end_date: Time.new(2022, 5, 14),
                 status: 3)
 
 # 4.
-Booking.create!(shorty_id: waterloo_napoleon_bonaparte.id,
+Booking.create!(shorty_id: top_scorer_lionel_messi.id,
                 user_id: kim_coquilla.id,
                 start_date: Time.new(2022, 4, 7),
                 end_date: Time.new(2022, 4, 8),
                 status: 3)
 
 # 5.
-Booking.create!(shorty_id: emperor_napoleon_bonaparte.id,
+Booking.create!(shorty_id: drunkard_lionel_messi.id,
                 user_id: james_campbell.id,
                 start_date: Time.new(2022, 3, 21),
                 end_date: Time.new(2022, 3, 22),
@@ -189,7 +200,7 @@ Booking.create!(shorty_id: funny_kevin_hart.id,
                 status: 0)
 
 # 7.
-Booking.create!(shorty_id: black_tie_kevin_hart.id,
+Booking.create!(shorty_id: party_kevin_hart.id,
                 user_id: yann_bouhadana.id,
                 start_date: Time.new(2022, 5, 21),
                 end_date: Time.new(2022, 5, 22),
@@ -203,7 +214,7 @@ Booking.create!(shorty_id: funny_kevin_hart.id,
                 status: 3)
 
 # 9.
-Booking.create!(shorty_id: black_tie_kevin_hart.id,
+Booking.create!(shorty_id: party_kevin_hart.id,
                 user_id: jorge_alvarez.id,
                 start_date: Time.new(2022, 3, 11),
                 end_date: Time.new(2022, 3, 12),
@@ -217,21 +228,21 @@ Booking.create!(shorty_id: funny_kevin_hart.id,
                 status: 3)
 
 # 11.
-Booking.create!(shorty_id: business_danny_devito.id,
+Booking.create!(shorty_id: big_business_danny_devito.id,
                 user_id: jorge_alvarez.id,
                 start_date: Time.new(2022, 5, 29),
                 end_date: Time.new(2022, 5, 30),
                 status: 0)
 
 # 12.
-Booking.create!(shorty_id: animal_danny_devito.id,
+Booking.create!(shorty_id: smiley_danny_devito.id,
                 user_id: yann_bouhadana.id,
                 start_date: Time.new(2022, 5, 24),
                 end_date: Time.new(2022, 5, 25),
                 status: 1)
 
 # 13.
-Booking.create!(shorty_id: business_danny_devito.id,
+Booking.create!(shorty_id: big_business_danny_devito.id,
                 user_id: kim_coquilla.id,
                 start_date: Time.new(2022, 5, 16),
                 end_date: Time.new(2022, 5, 17),
@@ -245,7 +256,7 @@ Booking.create!(shorty_id: black_tie_danny_devito.id,
                 status: 3)
 
 # 15.
-Booking.create!(shorty_id: business_danny_devito.id,
+Booking.create!(shorty_id: big_business_danny_devito.id,
                 user_id: yann_bouhadana.id,
                 start_date: Time.new(2022, 3, 18),
                 end_date: Time.new(2022, 3, 19),
