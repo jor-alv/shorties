@@ -16,7 +16,7 @@ User.create!(email: 'johnlittlewood@lewagon.com',
              password: '123456',
              photo_url: 'https://theartsdesk.com/sites/default/files/styles/mast_image_landscape/public/mastimages/Screen%20shot%202012-11-24%20at%2012.25.11.png?itok=KPLvDz1f')
 
-john_littlewood = User.last
+# john_littlewood = User.last
 
 # 2. danny_devito
 User.create!(email: 'dannydevito@lewagon.com',
@@ -25,7 +25,7 @@ User.create!(email: 'dannydevito@lewagon.com',
              password: '123456',
              photo_url: 'https://cdn.vox-cdn.com/thumbor/gnPngn18g1kI_jezInce3P39J9c=/0x0:3200x1800/2070x1164/filters:focal(1344x644:1856x1156):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/65316416/danny_devito.0.jpg')
 
-danny_devito = User.last
+# danny_devito = User.last
 
 # 3. kevin_hart
 User.create!(email: 'kevin_hart@lewagon.com',
@@ -34,7 +34,7 @@ User.create!(email: 'kevin_hart@lewagon.com',
              password: '123456',
              photo_url: 'https://financerewind.com/wp-content/uploads/2020/09/kevin-e1599502332249.jpg')
 
-kevin_hart = User.last
+# kevin_hart = User.last
 
 # 4. lionel_messi
 User.create!(email: 'lionel_messi@lewagon.com',
@@ -43,7 +43,7 @@ User.create!(email: 'lionel_messi@lewagon.com',
              password: '123456',
              photo_url: 'https://sportslibro.com/football/wp-content/uploads/2020/03/323w.jpg')
 
-lionel_messi = User.last
+# lionel_messi = User.last
 
 # 5. paul_lanza
 User.create!(email: 'paul_lanza@lewagon.com',
@@ -52,7 +52,7 @@ User.create!(email: 'paul_lanza@lewagon.com',
              password: '123456',
              photo_url: 'https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/v1649113462/whvqgnpdwxrgvpkeufb1.jpg')
 
-paul_lanza = User.last
+# paul_lanza = User.last
 
 # 6. yann_bouhadana
 User.create!(email: 'yannbouhadana@lewagon.com',
@@ -140,7 +140,7 @@ Shorty.create!(height: 147,
                photo_url: "",
                address: "5333 Casgrain, Montreal, Quebec, Canada")
 
-wingman_yann_bouhadana = Shorty.last
+# wingman_yann_bouhadana = Shorty.last
 
 # 5. top_scorer_lionel_messi
 Shorty.create!(height: 169,
@@ -212,7 +212,7 @@ Shorty.create!(height: 147,
                photo_url: "",
                address: "408 Rue Runnymede, Canada")
 
-awesome_yann_bouhadana = Shorty.last
+# awesome_yann_bouhadana = Shorty.last
 
 # 11. wierdo_kevin_hart
 Shorty.create!(height: 157,
@@ -236,7 +236,7 @@ Shorty.create!(height: 147,
                photo_url: "https://jasonbgraham.com/wp-content/uploads/2019/01/jasonbgraham-poop-icon.png",
                address: "Hopital Maisonneuve-Rosemont, Canada")
 
-smelly_paul_lanza = Shorty.last
+# smelly_paul_lanza = Shorty.last
 
 #
 # BOOKING SEEDS
